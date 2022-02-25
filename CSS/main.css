@@ -1,1 +1,17 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+body .logoText p {
+  font-weight: 500;
+  color: #7e7d7d;
+}
+
+body .logoText p span {
+  color: #0eb4fc;
+}
+
+body .welcomeText p {
+  color: #7e7d7d;
+}
+
+body .welcomeText p span {
+  color: #0eb4fc;
+}
+/*# sourceMappingURL=main.css.map */
