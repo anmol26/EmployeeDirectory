@@ -16,4 +16,23 @@ body {
       }
     }
   }
+  .leftSideBar {
+    ul {
+      li {
+        color: gray;
+        list-style: none;
+      }
+      a {
+        color: red;
+      }
+    }
+  }
+  .rightSideBar {
+    .alphabetSearchButtons {
+      button {
+        background-color: #00b1fc;
+        color: white;
+      }
+    }
+  }
 }

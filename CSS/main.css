@@ -14,4 +14,18 @@ body .welcomeText p {
 body .welcomeText p span {
   color: #0eb4fc;
 }
+
+body .leftSideBar ul li {
+  color: gray;
+  list-style: none;
+}
+
+body .leftSideBar ul a {
+  color: red;
+}
+
+body .rightSideBar .alphabetSearchButtons button {
+  background-color: #00b1fc;
+  color: white;
+}
 /*# sourceMappingURL=main.css.map */
