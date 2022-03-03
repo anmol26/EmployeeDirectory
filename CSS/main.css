@@ -24,16 +24,6 @@ body .leftSideBar ul a {
   color: red;
 }
 
-body .rightSideBar {
-  /* Style The Dropdown Button */
-  /* The container <div> - needed to position the dropdown content */
-  /* Dropdown Content (Hidden by Default) */
-  /* Links inside the dropdown */
-  /* Change color of dropdown links on hover */
-  /* Show the dropdown menu on hover */
-  /* Change the background color of the dropdown button when the dropdown content is shown */
-}
-
 body .rightSideBar .alphabetSearchButtons button {
   background-color: #00b1fc;
   color: white;
@@ -54,47 +44,59 @@ body .rightSideBar .searchFilterBySection .clearButton {
   color: white;
 }
 
-body .rightSideBar .dropbtn {
-  background-color: white;
-  color: gray;
-  font-size: 16px;
-  border: gray;
-  border-style: solid;
-  border-width: 1px;
-  cursor: pointer;
-}
-
-body .rightSideBar .dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-body .rightSideBar .dropdown-content {
+body .rightSideBar .searchFilterBySection .formPopup {
+  margin: 3% auto 0 auto;
   display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  position: fixed;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 40%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background: #00b1fc;
+  padding: 2% 0 1% 0;
+  border: 1px solid #737373;
 }
 
-body .rightSideBar .dropdown-content a {
-  color: black;
-  padding: 2px 16px;
-  text-decoration: none;
-  display: block;
+body .rightSideBar .searchFilterBySection .formPopup h2 {
+  text-align: center;
+  color: #bb2a2a;
 }
 
-body .rightSideBar .dropdown-content a:hover {
-  background-color: #f1f1f1;
+body .rightSideBar .searchFilterBySection .formPopup label {
+  margin-left: 2%;
+  font-weight: bold;
 }
 
-body .rightSideBar .dropdown:hover .dropdown-content {
-  display: block;
+body .rightSideBar .searchFilterBySection .formPopup select {
+  width: 75%;
+  height: 20px;
 }
 
-body .rightSideBar .dropdown:hover .dropbtn {
-  background-color: white;
+body .rightSideBar .searchFilterBySection .formPopup option {
+  font-size: smaller;
+}
+
+body .rightSideBar .searchFilterBySection .formPopup input {
+  width: 70%;
+  margin-bottom: 2%;
+  border: 1px solid #737373;
+  height: 20px;
+}
+
+body .rightSideBar .searchFilterBySection .formPopup .employeeFormButton {
+  text-align: center;
+}
+
+body .rightSideBar .searchFilterBySection .formPopup .employeeFormButton .submit {
+  background-color: #69ba00;
+  font-weight: bolder;
+}
+
+body .rightSideBar .searchFilterBySection .formPopup .employeeFormButton .close {
+  background-color: #ad2e2e;
+  font-weight: bolder;
 }
 /*# sourceMappingURL=main.css.map */
