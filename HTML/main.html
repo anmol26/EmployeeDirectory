@@ -49,30 +49,36 @@
     <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
     <div class="container-fluid mt-4">
       <div class="row g-0">
-        <div class="col-md-3 leftSideBar">
+        <div class="col-md-3 leftSideBar" onmouseover="updateCount()">
+        <div class="departments"  >
           <h6 class="ms-4">Departments</h6>
           <ul>
             <li id="it">IT(<span id="itNo">0</span>)</li>
             <li id="hr">Human Resources(<span id="hrNo">0</span>)</li>
             <li id="md">MD(<span id="mdNo">0</span>)</li>
-            <li id="sales">Sales(<span id="salesNo">0</span>)</li>
+            <li id="sales" >Sales(<span id="salesNo">0</span>)</li>
           </ul>
+        </div>
+        <div class="offices">
           <h6 class="ms-4">Offices</h6>
           <ul>
-            <li id="seattle">Seattle(<span id="seatleOffice">1</span>)</li>
-            <li id="india">India(<span id="indiaOffice">1</span>)</li>
+            <li id="seattle">Seattle(<span id="seattleOffice">0</span>)</li>
+            <li id="india">India(<span id="indiaOffice">0</span>)</li>
           </ul>
+        </div>
+        <div class="jobTitles">
           <h6 class="ms-4">Job Titles</h6>
           <ul>
             <li id="sph">
-              SharePoint Practice Head(<span id="sphNo">1</span>)
+              SharePoint Practice Head(<span id="sphNo">0</span>)
             </li>
-            <li id="ndl">.Net Development Lead(<span id="ndlNo">1</span>)</li>
-            <li id="re">Recruiting Expert(<span id="reNo">1</span>)</li>
-            <li id="bi">BI Developer(<span id="biNo">1</span>)</li>
-            <li id="ba">Business Analyst(<span id="baNo">1</span>)</li>
+            <li id="ndl">.Net Development Lead(<span id="ndlNo">0</span>)</li>
+            <li id="re">Recruiting Expert(<span id="reNo">0</span>)</li>
+            <li id="bi">BI Developer(<span id="biNo">0</span>)</li>
+            <li id="ba">Business Analyst(<span id="baNo">0</span>)</li>
             <a style="color: rgba(14, 180, 252, 255)">view more</a>
           </ul>
+        </div>
         </div>
         
     <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
@@ -133,7 +139,7 @@
             color: white;" ><h6>Add Employee</h6></button>
 <!-- ////////////////fgdgfb////////////////////// -->
 <div class="formPopup" id="myForm"> 
-<form class="newEmployee">
+<form class="newEmployee" onsubmit="addEmployee()">
     <h2 class="formHeading">Add New Employee</h2>
     <label for="firstName">First Name</label>
     <input id="firstName" type="text" required />
