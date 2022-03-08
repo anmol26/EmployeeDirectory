@@ -12,12 +12,6 @@ let employees = [
 		skypeId: 'anmol1234',
 		photo: 'user.jpg',
 	},
-    {
-        firstName:'Vaibhav',
-        department: 'MD',
-        office:'Seattle',
-        jobTitle:'Business Analyst'
-    }
 ];
 
 let displayEmployees = employees;
@@ -82,7 +76,7 @@ function closeEmployeeForm(){
 function clearsearch(){
     document.getElementById("search").value="";
 }
-//////////////nkjbk////////////////
+
 function addEmployee(){
     displayEmployees.push(
         {   firstName: document.getElementById('firstName').value,
@@ -99,7 +93,6 @@ function addEmployee(){
     updateCount();
     closeEmployeeForm();
 }
-/////////////////njnk//////////////
 
 function updateCount(){
     let dCount=0;
@@ -173,6 +166,61 @@ function updateCount(){
     document.getElementById("baNo").innerHTML= baCount;
 }
 
-// function updateLeftSideBar(){
-//     document.getElementById("itNo").innerHTML= displayEmployees[0].firstName;
-// }
+function getHtmlForEmployeeList() {
+    var finalHtml = '';
+    for (let a in displayEmployees)
+    {
+        var emp = displayEmployees[a];
+        var employee = `<div class="employee">
+        <img src="../Images/user.jpg" alt="Employee Image"/>
+        <div class= "employee-details" >
+        <h3>${emp.preferredName}</h3>
+        <p>${emp.jobTitle}</p>
+        <p>${emp.department} Department</p>
+			<div class="icons">
+			<ion-icon name="call"></ion-icon>
+			<ion-icon name="mail"></ion-icon>
+			<ion-icon name="text"></ion-icon>
+			<ion-icon name="star"></ion-icon>
+			<ion-icon name="heart"></ion-icon>
+			</div>
+		</div>
+		</div>`;
+		finalHtml += employee;
+    }
+    document.getElementById("employeeListSpace").innerHTML=finalHtml;
+}
+
+function getEmployeeByAttr(x){
+    var finalHtml='';
+    for(let b in displayEmployees)
+    {
+        var emp = displayEmployees[b];
+        var name= emp.firstName;
+        if(name.charAt(0) == x){
+            var employee = `<div class="employee">
+        <img src="../Images/user.jpg" alt="Employee Image"/>
+        <div class= "employee-details" >
+        <h3>${emp.preferredName}</h3>
+        <p>${emp.jobTitle}</p>
+        <p>${emp.department} Department</p>
+			<div class="icons">
+			<ion-icon name="call"></ion-icon>
+			<ion-icon name="mail"></ion-icon>
+			<ion-icon name="text"></ion-icon>
+			<ion-icon name="star"></ion-icon>
+			<ion-icon name="heart"></ion-icon>
+			</div>
+		</div>
+		</div>`;
+		finalHtml += employee;
+        }
+    }
+    document.getElementById("employeeListSpace").innerHTML=finalHtml;
+
+}
+
+function getEmployeeByDetail(){
+    
+}
+

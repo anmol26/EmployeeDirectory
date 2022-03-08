@@ -84,39 +84,38 @@
     <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
         <div class="col-md-9 rightSideBar">
             <div class="alphabetSearchButtons">
-            <button type="button" class="btn rounded-0 btn-sm"><i class='fas' style='color:white'>&#xf406;</i>
-            </button>
-            <button type="button" class="btn rounded-0 btn-sm">A</button>
-            <button type="button" class="btn rounded-0 btn-sm">B</button>
-            <button type="button" class="btn rounded-0 btn-sm">C</button>
-            <button type="button" class="btn rounded-0 btn-sm">D</button>
-            <button type="button" class="btn rounded-0 btn-sm">E</button>
-            <button type="button" class="btn rounded-0 btn-sm">F</button>
-            <button type="button" class="btn rounded-0 btn-sm">G</button>
-            <button type="button" class="btn rounded-0 btn-sm">H</button>
-            <button type="button" class="btn rounded-0 btn-sm">I</button>
-            <button type="button" class="btn rounded-0 btn-sm">J</button>
-            <button type="button" class="btn rounded-0 btn-sm">K</button>
-            <button type="button" class="btn rounded-0 btn-sm">L</button>
-            <button type="button" class="btn rounded-0 btn-sm">M</button>
-            <button type="button" class="btn rounded-0 btn-sm">N</button>
-            <button type="button" class="btn rounded-0 btn-sm">O</button>
-            <button type="button" class="btn rounded-0 btn-sm">P</button>
-            <button type="button" class="btn rounded-0 btn-sm">Q</button>
-            <button type="button" class="btn rounded-0 btn-sm">R</button>
-            <button type="button" class="btn rounded-0 btn-sm">S</button>
-            <button type="button" class="btn rounded-0 btn-sm">T</button>
-            <button type="button" class="btn rounded-0 btn-sm">U</button>
-            <button type="button" class="btn rounded-0 btn-sm">V</button>
-            <button type="button" class="btn rounded-0 btn-sm">W</button>
-            <button type="button" class="btn rounded-0 btn-sm">X</button>
-            <button type="button" class="btn rounded-0 btn-sm">Y</button>
-            <button type="button" class="btn rounded-0 btn-sm">Z</button>
+            <button type="button" class="btn rounded-0 btn-sm" onclick="getHtmlForEmployeeList()"><ion-icon name="person"></ion-icon></button>
+            <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('A')">A</button>
+            <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('B')">B</button>
+            <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('C')">C</button>
+            <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('D')">D</button>
+            <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('E')">E</button>
+            <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('F')">F</button>
+            <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('G')">G</button>
+            <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('H')">H</button>
+            <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('I')">I</button>
+            <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('J')">J</button>
+            <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('K')">K</button>
+            <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('L')">L</button>
+            <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('M')">M</button>
+            <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('N')">N</button>
+            <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('O')">O</button>
+            <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('P')">P</button>
+            <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('Q')">Q</button>
+            <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('R')">R</button>
+            <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('S')">S</button>
+            <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('T')">T</button>
+            <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('U')">U</button>
+            <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('V')">V</button>
+            <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('W')">W</button>
+            <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('X')">X</button>
+            <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('Y')">Y</button>
+            <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('Z')">Z</button>
         </div>
     <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
         <div class="searchFilterBySection mt-3">
             <h6>Search</h6> 
-            <input class="form-control rounded-0 ms-2" id="search" type="text" placeholder="&#x1F50D; Enter any keyword" aria-label="Search">
+            <input class="form-control rounded-0 ms-2" id="search" type="text" placeholder="&#x1F50D; Enter any keyword" onclick="getEmployeeByDetail()">
             <button type="button" onclick="clearsearch()" class="btn rounded-0 btn-sm clearButton" style="margin-left:1rem; height:2.2rem; display:inline-flexbox" >Clear</button>
             
             <label for="filter"><h6 style="margin-left:2rem">Filter by</h6></label>
@@ -185,18 +184,25 @@
 </div>
 <!-- ////////////////dgfnth////////////////////// -->
 
-
-
-
-
             <p><h6>Note: </h6> Please use the advanced filter options to refine your results.</p>
         </div>
 
         <!-- ///////////////////////////////////////////////////////////////////////////////////////// -->
-        <div class="border mt-2">todo</div>
+        <div class="border mt-2 employeeListSpace" onmouseover="getHtmlForEmployeeList()">  
+            <!-- in employeelistspace----onmouseover="getHtmlForEmployeeList()" -->
+            <div id="employeeListSpace"></div>
+        </div>
 
       </div>
     </div>
     
+<!-- ////////////script -->
+<script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js">
+</script>
+
+<!-- script////////////////// -->
+
   </body>
 </html>

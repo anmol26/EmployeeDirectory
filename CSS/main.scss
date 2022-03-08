@@ -93,5 +93,48 @@ body {
         }
       }
     }
+    .employeeListSpace {
+      padding: 1.5%;
+      height: 85%;
+      border: 1px solid #737373;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-gap: 1%;
+    }
+    .employee {
+      display: inline-flex;
+      background: #e8e9e8;
+      align-items: center;
+      padding: 0.5em;
+      margin-bottom: 10px;
+      cursor: context-menu;
+
+      img {
+        height: 80px;
+        width: 80px;
+      }
+    }
+
+    // .employee:hover {
+    //   background: #d1d2d1;
+    // }
+
+    .employee-details {
+      margin-left: 5%;
+      line-height: 0%;
+      width: 200px;
+      //   height: 100px;
+      h3 {
+        color: #6f6c6d;
+        font-size: 1em;
+      }
+      p {
+        font-size: 0.9em;
+        color: #a9a8a8;
+      }
+      .icons ion-icon {
+        color: #a9a8a8;
+      }
+    }
   }
 }
