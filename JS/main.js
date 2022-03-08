@@ -82,12 +82,24 @@ function closeEmployeeForm(){
 function clearsearch(){
     document.getElementById("search").value="";
 }
-//////////////nkjbk/////////////
+//////////////nkjbk////////////////
 function addEmployee(){
-    displayEmployees.push({firstName:'dfg',department: 'Sales',office:'Seattle',jobTitle:'BI Developer'})
+    displayEmployees.push(
+        {   firstName: document.getElementById('firstName').value,
+            lastName: document.getElementById('lastName').value,
+            preferredName:document.getElementById('preferredName').value,
+            email:document.getElementById('email').value,
+            jobTitle:document.getElementById('jobTitle').value,
+            department: document.getElementById('department').value,
+            office:document.getElementById('office').value,
+            department:document.getElementById('department').value,
+            phoneNumber:document.getElementById('phoneNumber').value,
+            skypeId:document.getElementById('skypeId').value,
+        });
     updateCount();
+    closeEmployeeForm();
 }
-/////////////////njnk/////////////
+/////////////////njnk//////////////
 
 function updateCount(){
     let dCount=0;
