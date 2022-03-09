@@ -17,8 +17,6 @@
     <script src="../JS/main.js"></script>
     <!-- For icon -->
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <!-- For popover -->
-    <!-- <script src="bootstrap.bundle.min.js" crossorigin="anonymous"></script> -->
   </head>
   <body>
     <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
@@ -115,7 +113,7 @@
     <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
         <div class="searchFilterBySection mt-3">
             <h6>Search</h6> 
-            <input class="form-control rounded-0 ms-2" id="search" type="text" placeholder="&#x1F50D; Enter any keyword" onclick="getEmployeeByDetail()">
+            <input class="form-control rounded-0 ms-2" id="search" type="text" placeholder="&#x1F50D; Enter any keyword" oninput="getEmployeeByDetail(this.value)">
             <button type="button" onclick="clearsearch()" class="btn rounded-0 btn-sm clearButton" style="margin-left:1rem; height:2.2rem; display:inline-flexbox" >Clear</button>
             
             <label for="filter"><h6 style="margin-left:2rem">Filter by</h6></label>
@@ -136,7 +134,7 @@
 
             <button type="button" class="btn rounded-0 btn-sm addEmployee" onclick="openEmployeeForm()" style="margin-left:1rem; height:2rem; display:inline-flexbox; background-color: #00b1fc; margin-left: 150px;margin-top: -0.3rem;
             color: white;" ><h6>Add Employee</h6></button>
-<!-- ////////////////fgdgfb////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
 <div class="formPopup" id="myForm"> 
 <form class="newEmployee" onsubmit="addEmployee()">
     <h2 class="formHeading">Add New Employee</h2>
@@ -182,27 +180,18 @@
     </div>
 </form>
 </div>
-<!-- ////////////////dgfnth////////////////////// -->
 
             <p><h6>Note: </h6> Please use the advanced filter options to refine your results.</p>
         </div>
-
-        <!-- ///////////////////////////////////////////////////////////////////////////////////////// -->
         <div class="border mt-2 employeeListSpace" onmouseover="getHtmlForEmployeeList()">  
-            <!-- in employeelistspace----onmouseover="getHtmlForEmployeeList()" -->
             <div id="employeeListSpace"></div>
         </div>
 
       </div>
     </div>
-    
-<!-- ////////////script -->
 <script
     type="module"
     src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js">
 </script>
-
-<!-- script////////////////// -->
-
   </body>
 </html>

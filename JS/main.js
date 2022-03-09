@@ -1,4 +1,3 @@
-
 let employees = [
 	{
 		firstName: 'Anmol',
@@ -15,57 +14,6 @@ let employees = [
 ];
 
 let displayEmployees = employees;
-
-const filters=[
-	{
-		type: 'departments',
-		names: [
-			{
-				name: 'it'
-			},
-			{
-				name: 'hr'
-			},
-			{
-				name: 'md'
-			},
-			{
-				name: 'sales'
-			},
-		],
-	},
-	{
-		type: 'offices',
-		names: [
-			{
-				name: 'seattle'
-			},
-			{
-				name: 'india'
-			},
-		],
-	},
-	{
-		type: 'jobTitles',
-		names: [
-			{
-				name: 'sph'
-			},
-			{
-				name: 'ndl'
-			},
-			{
-				name: 're'
-			},
-			{
-				name: 'bi'
-			},
-			{
-				name: 'ba'
-			},
-		],
-	},
-];
 
 function openEmployeeForm() {
     document.getElementById("myForm").style.display = "block";
@@ -198,7 +146,7 @@ function getEmployeeByAttr(x){
         var emp = displayEmployees[b];
         var name= emp.firstName;
         if(name.charAt(0) == x){
-            var employee = `<div class="employee">
+        var employee = `<div class="employee">
         <img src="../Images/user.jpg" alt="Employee Image"/>
         <div class= "employee-details" >
         <h3>${emp.preferredName}</h3>
@@ -220,7 +168,218 @@ function getEmployeeByAttr(x){
 
 }
 
-function getEmployeeByDetail(){
+function getEmployeeByDetail(x){
+    var finalHtml='';
+    for(let c in displayEmployees)
+    {
+        var emp = displayEmployees[c];
+        if(document.getElementById("filter").value=='firstName')
+        {
+        if(emp.firstName.includes(x))
+        {
+        var employee = `<div class="employee">
+        <img src="../Images/user.jpg" alt="Employee Image"/>
+        <div class= "employee-details" >
+        <h3>${emp.preferredName}</h3>
+        <p>${emp.jobTitle}</p>
+        <p>${emp.department} Department</p>
+			<div class="icons">
+			<ion-icon name="call"></ion-icon>
+			<ion-icon name="mail"></ion-icon>
+			<ion-icon name="text"></ion-icon>
+			<ion-icon name="star"></ion-icon>
+			<ion-icon name="heart"></ion-icon>
+			</div>
+		</div>
+		</div>`;
+		finalHtml += employee;
+        }
+        }
     
+        else if(document.getElementById("filter").value=='lastName')
+        {
+        if(emp.lastName.includes(x))
+        {
+        var employee = `<div class="employee">
+        <img src="../Images/user.jpg" alt="Employee Image"/>
+        <div class= "employee-details" >
+        <h3>${emp.preferredName}</h3>
+        <p>${emp.jobTitle}</p>
+        <p>${emp.department} Department</p>
+			<div class="icons">
+			<ion-icon name="call"></ion-icon>
+			<ion-icon name="mail"></ion-icon>
+			<ion-icon name="text"></ion-icon>
+			<ion-icon name="star"></ion-icon>
+			<ion-icon name="heart"></ion-icon>
+			</div>
+		</div>
+		</div>`;
+		finalHtml += employee;
+        }
+        }
+
+        else if(document.getElementById("filter").value=='preferredName')
+        {
+        if(emp.preferredName.includes(x))
+        {
+        var employee = `<div class="employee">
+        <img src="../Images/user.jpg" alt="Employee Image"/>
+        <div class= "employee-details" >
+        <h3>${emp.preferredName}</h3>
+        <p>${emp.jobTitle}</p>
+        <p>${emp.department} Department</p>
+			<div class="icons">
+			<ion-icon name="call"></ion-icon>
+			<ion-icon name="mail"></ion-icon>
+			<ion-icon name="text"></ion-icon>
+			<ion-icon name="star"></ion-icon>
+			<ion-icon name="heart"></ion-icon>
+			</div>
+		</div>
+		</div>`;
+		finalHtml += employee;
+        }
+        }
+        
+        else if(document.getElementById("filter").value=='email')
+        {
+        if(emp.email.includes(x))
+        {
+        var employee = `<div class="employee">
+        <img src="../Images/user.jpg" alt="Employee Image"/>
+        <div class= "employee-details" >
+        <h3>${emp.preferredName}</h3>
+        <p>${emp.jobTitle}</p>
+        <p>${emp.department} Department</p>
+			<div class="icons">
+			<ion-icon name="call"></ion-icon>
+			<ion-icon name="mail"></ion-icon>
+			<ion-icon name="text"></ion-icon>
+			<ion-icon name="star"></ion-icon>
+			<ion-icon name="heart"></ion-icon>
+			</div>
+		</div>
+		</div>`;
+		finalHtml += employee;
+        }
+        }
+
+        else if(document.getElementById("filter").value=='jobTitle')
+        {
+        if(emp.jobTitle.includes(x))
+        {
+        var employee = `<div class="employee">
+        <img src="../Images/user.jpg" alt="Employee Image"/>
+        <div class= "employee-details" >
+        <h3>${emp.preferredName}</h3>
+        <p>${emp.jobTitle}</p>
+        <p>${emp.department} Department</p>
+			<div class="icons">
+			<ion-icon name="call"></ion-icon>
+			<ion-icon name="mail"></ion-icon>
+			<ion-icon name="text"></ion-icon>
+			<ion-icon name="star"></ion-icon>
+			<ion-icon name="heart"></ion-icon>
+			</div>
+		</div>
+		</div>`;
+		finalHtml += employee;
+        }
+        }
+
+        else if(document.getElementById("filter").value=='office')
+        {
+        if(emp.office.includes(x))
+        {
+        var employee = `<div class="employee">
+        <img src="../Images/user.jpg" alt="Employee Image"/>
+        <div class= "employee-details" >
+        <h3>${emp.preferredName}</h3>
+        <p>${emp.jobTitle}</p>
+        <p>${emp.department} Department</p>
+			<div class="icons">
+			<ion-icon name="call"></ion-icon>
+			<ion-icon name="mail"></ion-icon>
+			<ion-icon name="text"></ion-icon>
+			<ion-icon name="star"></ion-icon>
+			<ion-icon name="heart"></ion-icon>
+			</div>
+		</div>
+		</div>`;
+		finalHtml += employee;
+        }
+        }
+
+        else if(document.getElementById("filter").value=='department')
+        {
+        if(emp.department.includes(x))
+        {
+        var employee = `<div class="employee">
+        <img src="../Images/user.jpg" alt="Employee Image"/>
+        <div class= "employee-details" >
+        <h3>${emp.preferredName}</h3>
+        <p>${emp.jobTitle}</p>
+        <p>${emp.department} Department</p>
+			<div class="icons">
+			<ion-icon name="call"></ion-icon>
+			<ion-icon name="mail"></ion-icon>
+			<ion-icon name="text"></ion-icon>
+			<ion-icon name="star"></ion-icon>
+			<ion-icon name="heart"></ion-icon>
+			</div>
+		</div>
+		</div>`;
+		finalHtml += employee;
+        }
+        }
+
+        else if(document.getElementById("filter").value=='phoneNumber')
+        {
+        if(emp.phoneNumber.includes(x))
+        {
+        var employee = `<div class="employee">
+        <img src="../Images/user.jpg" alt="Employee Image"/>
+        <div class= "employee-details" >
+        <h3>${emp.preferredName}</h3>
+        <p>${emp.jobTitle}</p>
+        <p>${emp.department} Department</p>
+			<div class="icons">
+			<ion-icon name="call"></ion-icon>
+			<ion-icon name="mail"></ion-icon>
+			<ion-icon name="text"></ion-icon>
+			<ion-icon name="star"></ion-icon>
+			<ion-icon name="heart"></ion-icon>
+			</div>
+		</div>
+		</div>`;
+		finalHtml += employee;
+        }
+        }
+
+        else if(document.getElementById("filter").value=='skypeId')
+        {
+        if(emp.skypeId.includes(x))
+        {
+        var employee = `<div class="employee">
+        <img src="../Images/user.jpg" alt="Employee Image"/>
+        <div class= "employee-details" >
+        <h3>${emp.preferredName}</h3>
+        <p>${emp.jobTitle}</p>
+        <p>${emp.department} Department</p>
+			<div class="icons">
+			<ion-icon name="call"></ion-icon>
+			<ion-icon name="mail"></ion-icon>
+			<ion-icon name="text"></ion-icon>
+			<ion-icon name="star"></ion-icon>
+			<ion-icon name="heart"></ion-icon>
+			</div>
+		</div>
+		</div>`;
+		finalHtml += employee;
+        }
+        }
+    }
+    document.getElementById("employeeListSpace").innerHTML=finalHtml;
 }
 
