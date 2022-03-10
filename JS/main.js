@@ -19,7 +19,8 @@ function openEmployeeForm() {
     document.getElementById("myForm").style.display = "block";
   }
 function closeEmployeeForm(){
-    document.getElementById("myForm").style.display = "none";
+    document.getElementById("myForm").style.display = "none";  
+    document.body.style.filter= "none";         ////////////////////
 }
 function clearsearch(){
     document.getElementById("search").value="";
@@ -382,4 +383,3 @@ function getEmployeeByDetail(x){
     }
     document.getElementById("employeeListSpace").innerHTML=finalHtml;
 }
-
