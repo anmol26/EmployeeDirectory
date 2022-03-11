@@ -10,7 +10,7 @@ body .formPopup {
   width: 100%;
   height: 100%;
   z-index: 1;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -19,7 +19,7 @@ body .formPopup {
 body .formPopup .newEmployee {
   width: 40%;
   margin: auto;
-  background: #76b2cc;
+  background: #00b1fc;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -28,6 +28,8 @@ body .formPopup .newEmployee {
 body .formPopup h2 {
   text-align: center;
   color: #bb2a2a;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 body .formPopup label {
@@ -53,6 +55,8 @@ body .formPopup input {
 
 body .formPopup .employeeFormButton {
   text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 body .formPopup .employeeFormButton .submit {

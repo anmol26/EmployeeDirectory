@@ -23,8 +23,7 @@ function openEmployeeForm() {
 
   }
 function closeEmployeeForm(){
-    document.getElementById("myForm").style.display = "none";  
-    document.body.style.filter= "none";         ////////////////////
+    document.getElementById("myForm").style.display = "none"; 
 }
 function clearsearch(){
     document.getElementById("search").value="";
@@ -44,6 +43,7 @@ function addEmployee(){
             skypeId:document.getElementById('skypeId').value,
         });
     updateCount();
+    getHtmlForEmployeeList();
     closeEmployeeForm();
 }
 
@@ -205,21 +205,6 @@ function getEmployeeByDetail(x){
         {
         if(emp.lastName.includes(x))
         {
-        var employee = `<div class="employee">
-        <img src="../Images/user.jpg" alt="Employee Image"/>
-        <div class= "employee-details" >
-        <h3>${emp.preferredName}</h3>
-        <p>${emp.jobTitle}</p>
-        <p>${emp.department} Department</p>
-			<div class="icons">
-			<ion-icon name="call"></ion-icon>
-			<ion-icon name="mail"></ion-icon>
-			<ion-icon name="text"></ion-icon>
-			<ion-icon name="star"></ion-icon>
-			<ion-icon name="heart"></ion-icon>
-			</div>
-		</div>
-		</div>`;
 		finalHtml += employee;
         }
         }
@@ -228,21 +213,6 @@ function getEmployeeByDetail(x){
         {
         if(emp.preferredName.includes(x))
         {
-        var employee = `<div class="employee">
-        <img src="../Images/user.jpg" alt="Employee Image"/>
-        <div class= "employee-details" >
-        <h3>${emp.preferredName}</h3>
-        <p>${emp.jobTitle}</p>
-        <p>${emp.department} Department</p>
-			<div class="icons">
-			<ion-icon name="call"></ion-icon>
-			<ion-icon name="mail"></ion-icon>
-			<ion-icon name="text"></ion-icon>
-			<ion-icon name="star"></ion-icon>
-			<ion-icon name="heart"></ion-icon>
-			</div>
-		</div>
-		</div>`;
 		finalHtml += employee;
         }
         }
@@ -251,21 +221,6 @@ function getEmployeeByDetail(x){
         {
         if(emp.email.includes(x))
         {
-        var employee = `<div class="employee">
-        <img src="../Images/user.jpg" alt="Employee Image"/>
-        <div class= "employee-details" >
-        <h3>${emp.preferredName}</h3>
-        <p>${emp.jobTitle}</p>
-        <p>${emp.department} Department</p>
-			<div class="icons">
-			<ion-icon name="call"></ion-icon>
-			<ion-icon name="mail"></ion-icon>
-			<ion-icon name="text"></ion-icon>
-			<ion-icon name="star"></ion-icon>
-			<ion-icon name="heart"></ion-icon>
-			</div>
-		</div>
-		</div>`;
 		finalHtml += employee;
         }
         }
@@ -274,21 +229,6 @@ function getEmployeeByDetail(x){
         {
         if(emp.jobTitle.includes(x))
         {
-        var employee = `<div class="employee">
-        <img src="../Images/user.jpg" alt="Employee Image"/>
-        <div class= "employee-details" >
-        <h3>${emp.preferredName}</h3>
-        <p>${emp.jobTitle}</p>
-        <p>${emp.department} Department</p>
-			<div class="icons">
-			<ion-icon name="call"></ion-icon>
-			<ion-icon name="mail"></ion-icon>
-			<ion-icon name="text"></ion-icon>
-			<ion-icon name="star"></ion-icon>
-			<ion-icon name="heart"></ion-icon>
-			</div>
-		</div>
-		</div>`;
 		finalHtml += employee;
         }
         }
@@ -297,21 +237,6 @@ function getEmployeeByDetail(x){
         {
         if(emp.office.includes(x))
         {
-        var employee = `<div class="employee">
-        <img src="../Images/user.jpg" alt="Employee Image"/>
-        <div class= "employee-details" >
-        <h3>${emp.preferredName}</h3>
-        <p>${emp.jobTitle}</p>
-        <p>${emp.department} Department</p>
-			<div class="icons">
-			<ion-icon name="call"></ion-icon>
-			<ion-icon name="mail"></ion-icon>
-			<ion-icon name="text"></ion-icon>
-			<ion-icon name="star"></ion-icon>
-			<ion-icon name="heart"></ion-icon>
-			</div>
-		</div>
-		</div>`;
 		finalHtml += employee;
         }
         }
@@ -320,21 +245,6 @@ function getEmployeeByDetail(x){
         {
         if(emp.department.includes(x))
         {
-        var employee = `<div class="employee">
-        <img src="../Images/user.jpg" alt="Employee Image"/>
-        <div class= "employee-details" >
-        <h3>${emp.preferredName}</h3>
-        <p>${emp.jobTitle}</p>
-        <p>${emp.department} Department</p>
-			<div class="icons">
-			<ion-icon name="call"></ion-icon>
-			<ion-icon name="mail"></ion-icon>
-			<ion-icon name="text"></ion-icon>
-			<ion-icon name="star"></ion-icon>
-			<ion-icon name="heart"></ion-icon>
-			</div>
-		</div>
-		</div>`;
 		finalHtml += employee;
         }
         }
@@ -343,21 +253,6 @@ function getEmployeeByDetail(x){
         {
         if(emp.phoneNumber.includes(x))
         {
-        var employee = `<div class="employee">
-        <img src="../Images/user.jpg" alt="Employee Image"/>
-        <div class= "employee-details" >
-        <h3>${emp.preferredName}</h3>
-        <p>${emp.jobTitle}</p>
-        <p>${emp.department} Department</p>
-			<div class="icons">
-			<ion-icon name="call"></ion-icon>
-			<ion-icon name="mail"></ion-icon>
-			<ion-icon name="text"></ion-icon>
-			<ion-icon name="star"></ion-icon>
-			<ion-icon name="heart"></ion-icon>
-			</div>
-		</div>
-		</div>`;
 		finalHtml += employee;
         }
         }
@@ -366,27 +261,9 @@ function getEmployeeByDetail(x){
         {
         if(emp.skypeId.includes(x))
         {
-        var employee = `<div class="employee">
-        <img src="../Images/user.jpg" alt="Employee Image"/>
-        <div class= "employee-details" >
-        <h3>${emp.preferredName}</h3>
-        <p>${emp.jobTitle}</p>
-        <p>${emp.department} Department</p>
-			<div class="icons">
-			<ion-icon name="call"></ion-icon>
-			<ion-icon name="mail"></ion-icon>
-			<ion-icon name="text"></ion-icon>
-			<ion-icon name="star"></ion-icon>
-			<ion-icon name="heart"></ion-icon>
-			</div>
-		</div>
-		</div>`;
 		finalHtml += employee;
         }
         }
     }
     document.getElementById("employeeListSpace").innerHTML=finalHtml;
 }
-
-getHtmlForEmployeeList();
-updateCount();
