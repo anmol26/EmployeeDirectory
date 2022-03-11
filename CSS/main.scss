@@ -1,4 +1,59 @@
 body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+
+  .formPopup {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.6);
+    align-items: center;
+
+    .newEmployee {
+      width: 40%;
+      margin: auto;
+      background: #76b2cc;
+      height: fit-content;
+    }
+
+    h2 {
+      text-align: center;
+      color: rgb(187, 42, 42);
+    }
+    label {
+      margin-left: 2%;
+      font-weight: bold;
+    }
+
+    select {
+      width: 75%;
+      height: 20px;
+    }
+    option {
+      font-size: smaller;
+    }
+    input {
+      width: 70%;
+      margin-bottom: 2%;
+      border: 1px solid #737373;
+      height: 20px;
+    }
+    .employeeFormButton {
+      text-align: center;
+      .submit {
+        background-color: #69ba00;
+        font-weight: bolder;
+      }
+      .close {
+        background-color: rgb(173, 46, 46);
+        font-weight: bolder;
+      }
+    }
+  }
+
   .logoText {
     p {
       font-weight: 500;
@@ -46,52 +101,6 @@ body {
         margin-top: -0.3rem;
         background-color: #69ba00;
         color: white;
-      }
-
-      .formPopup {
-        margin: 3% auto 0 auto;
-        display: none;
-        position: fixed;
-        flex-direction: column;
-        width: 40%;
-        justify-content: space-around;
-        background: #00b1fc;
-        padding: 2% 0 1% 0;
-        border: 1px solid #737373;
-
-        h2 {
-          text-align: center;
-          color: rgb(187, 42, 42);
-        }
-        label {
-          margin-left: 2%;
-          font-weight: bold;
-        }
-
-        select {
-          width: 75%;
-          height: 20px;
-        }
-        option {
-          font-size: smaller;
-        }
-        input {
-          width: 70%;
-          margin-bottom: 2%;
-          border: 1px solid #737373;
-          height: 20px;
-        }
-        .employeeFormButton {
-          text-align: center;
-          .submit {
-            background-color: #69ba00;
-            font-weight: bolder;
-          }
-          .close {
-            background-color: rgb(173, 46, 46);
-            font-weight: bolder;
-          }
-        }
       }
     }
     .employeeListSpace {

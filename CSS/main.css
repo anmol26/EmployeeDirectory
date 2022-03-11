@@ -1,3 +1,70 @@
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+}
+
+body .formPopup {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .formPopup .newEmployee {
+  width: 40%;
+  margin: auto;
+  background: #76b2cc;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+body .formPopup h2 {
+  text-align: center;
+  color: #bb2a2a;
+}
+
+body .formPopup label {
+  margin-left: 2%;
+  font-weight: bold;
+}
+
+body .formPopup select {
+  width: 75%;
+  height: 20px;
+}
+
+body .formPopup option {
+  font-size: smaller;
+}
+
+body .formPopup input {
+  width: 70%;
+  margin-bottom: 2%;
+  border: 1px solid #737373;
+  height: 20px;
+}
+
+body .formPopup .employeeFormButton {
+  text-align: center;
+}
+
+body .formPopup .employeeFormButton .submit {
+  background-color: #69ba00;
+  font-weight: bolder;
+}
+
+body .formPopup .employeeFormButton .close {
+  background-color: #ad2e2e;
+  font-weight: bolder;
+}
+
 body .logoText p {
   font-weight: 500;
   color: #7e7d7d;
@@ -42,62 +109,6 @@ body .rightSideBar .searchFilterBySection .clearButton {
   margin-top: -0.3rem;
   background-color: #69ba00;
   color: white;
-}
-
-body .rightSideBar .searchFilterBySection .formPopup {
-  margin: 3% auto 0 auto;
-  display: none;
-  position: fixed;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 40%;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  background: #00b1fc;
-  padding: 2% 0 1% 0;
-  border: 1px solid #737373;
-}
-
-body .rightSideBar .searchFilterBySection .formPopup h2 {
-  text-align: center;
-  color: #bb2a2a;
-}
-
-body .rightSideBar .searchFilterBySection .formPopup label {
-  margin-left: 2%;
-  font-weight: bold;
-}
-
-body .rightSideBar .searchFilterBySection .formPopup select {
-  width: 75%;
-  height: 20px;
-}
-
-body .rightSideBar .searchFilterBySection .formPopup option {
-  font-size: smaller;
-}
-
-body .rightSideBar .searchFilterBySection .formPopup input {
-  width: 70%;
-  margin-bottom: 2%;
-  border: 1px solid #737373;
-  height: 20px;
-}
-
-body .rightSideBar .searchFilterBySection .formPopup .employeeFormButton {
-  text-align: center;
-}
-
-body .rightSideBar .searchFilterBySection .formPopup .employeeFormButton .submit {
-  background-color: #69ba00;
-  font-weight: bolder;
-}
-
-body .rightSideBar .searchFilterBySection .formPopup .employeeFormButton .close {
-  background-color: #ad2e2e;
-  font-weight: bolder;
 }
 
 body .rightSideBar .employeeListSpace {

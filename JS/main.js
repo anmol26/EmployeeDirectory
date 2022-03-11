@@ -15,8 +15,12 @@ let employees = [
 
 let displayEmployees = employees;
 
+
 function openEmployeeForm() {
-    document.getElementById("myForm").style.display = "block";
+    let formPopup = document.getElementById("myForm");
+    formPopup.style.display = "flex";
+    formPopup.style.zIndex=999;
+
   }
 function closeEmployeeForm(){
     document.getElementById("myForm").style.display = "none";  
@@ -137,7 +141,7 @@ function getHtmlForEmployeeList() {
 		</div>`;
 		finalHtml += employee;
     }
-    document.getElementById("employeeListSpace").innerHTML=finalHtml;
+    document.getElementById('employeeListSpace').innerHTML = finalHtml;
 }
 
 function getEmployeeByAttr(x){
@@ -174,10 +178,6 @@ function getEmployeeByDetail(x){
     for(let c in displayEmployees)
     {
         var emp = displayEmployees[c];
-        if(document.getElementById("filter").value=='firstName')
-        {
-        if(emp.firstName.includes(x))
-        {
         var employee = `<div class="employee">
         <img src="../Images/user.jpg" alt="Employee Image"/>
         <div class= "employee-details" >
@@ -193,6 +193,10 @@ function getEmployeeByDetail(x){
 			</div>
 		</div>
 		</div>`;
+        if(document.getElementById("filter").value=='firstName')
+        {
+        if(emp.firstName.includes(x))
+        {
 		finalHtml += employee;
         }
         }
@@ -383,3 +387,6 @@ function getEmployeeByDetail(x){
     }
     document.getElementById("employeeListSpace").innerHTML=finalHtml;
 }
+
+getHtmlForEmployeeList();
+updateCount();
