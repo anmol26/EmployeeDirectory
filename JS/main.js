@@ -1,3 +1,5 @@
+
+
 let employees = [
 	{
 		firstName: 'Anmol',
@@ -29,23 +31,6 @@ function clearsearch(){
     document.getElementById("search").value="";
 }
 
-function addEmployee(){
-    displayEmployees.push(
-        {   firstName: document.getElementById('firstName').value,
-            lastName: document.getElementById('lastName').value,
-            preferredName:document.getElementById('preferredName').value,
-            email:document.getElementById('email').value,
-            jobTitle:document.getElementById('jobTitle').value,
-            department: document.getElementById('department').value,
-            office:document.getElementById('office').value,
-            department:document.getElementById('department').value,
-            phoneNumber:document.getElementById('phoneNumber').value,
-            skypeId:document.getElementById('skypeId').value,
-        });
-    updateCount();
-    getHtmlForEmployeeList();
-    closeEmployeeForm();
-}
 
 function updateCount(){
     let dCount=0;
@@ -142,6 +127,24 @@ function getHtmlForEmployeeList() {
 		finalHtml += employee;
     }
     document.getElementById('employeeListSpace').innerHTML = finalHtml;
+    updateCount();
+}
+
+function addEmployee(){
+    displayEmployees.push(
+        {   firstName: document.getElementById('firstName').value,
+            lastName: document.getElementById('lastName').value,
+            preferredName:document.getElementById('preferredName').value,
+            email:document.getElementById('email').value,
+            jobTitle:document.getElementById('jobTitle').value,
+            department: document.getElementById('department').value,
+            office:document.getElementById('office').value,
+            phoneNumber:document.getElementById('phoneNumber').value,
+            skypeId:document.getElementById('skypeId').value,
+        });
+    closeEmployeeForm();
+    updateCount();
+    getHtmlForEmployeeList();
 }
 
 function getEmployeeByAttr(x){
@@ -267,3 +270,8 @@ function getEmployeeByDetail(x){
     }
     document.getElementById("employeeListSpace").innerHTML=finalHtml;
 }
+//////////////////////////////////////////////////////////////////////////////////////
+
+
+//getHtmlForEmployeeList();
+// updateCount();
