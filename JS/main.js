@@ -271,7 +271,13 @@ function getEmployeeByDetail(x){
     document.getElementById("employeeListSpace").innerHTML=finalHtml;
 }
 //////////////////////////////////////////////////////////////////////////////////////
-
-
-//getHtmlForEmployeeList();
-// updateCount();
+function viewMore(){
+    document.getElementById("viewMore").style.display="block";
+    document.getElementById("aViewMore").style.display="none";
+    document.getElementById("viewLess").style.display="block";  
+}
+function viewLess(){
+    document.getElementById("viewMore").style.display="none";
+    document.getElementById("aViewMore").style.display="block";
+    document.getElementById("viewLess").style.display="none";  
+}
