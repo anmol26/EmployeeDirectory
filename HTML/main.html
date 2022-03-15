@@ -21,7 +21,7 @@
   <body onload="getHtmlForEmployeeList();">
       <!-- onload="getHtmlForEmployeeList(),updateCount()" -->
     <div class="formPopup" id="myForm" > 
-        <form class="newEmployee"  onsubmit="addEmployee();">
+        <form class="newEmployee"  onsubmit="addEmployee(); return false;">
             <h2 class="formHeading">Add New Employee</h2>
             <label for="firstName" value="firstName">First Name</label>
             <input id="firstName" type="text" required />
