@@ -92,7 +92,7 @@ body .leftSideBar ul li {
 }
 
 body .leftSideBar ul li:hover {
-  background: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
   width: 70%;
 }
 
@@ -103,6 +103,10 @@ body .leftSideBar ul a {
 body .rightSideBar .alphabetSearchButton button {
   background-color: #00b1fc;
   color: white;
+}
+
+body .rightSideBar .alphabetSearchButton button:focus {
+  background-color: red;
 }
 
 body .rightSideBar .searchFilterBySection h6 {
