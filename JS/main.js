@@ -29,6 +29,7 @@ function closeEmployeeForm(){
 }
 function clearsearch(){
     document.getElementById("search").value="";
+    getHtmlForEmployeeList();   
 }
 
 
@@ -270,14 +271,58 @@ function getEmployeeByDetail(x){
     }
     document.getElementById("employeeListSpace").innerHTML=finalHtml;
 }
-//////////////////////////////////////////////////////////////////////////////////////
+
 function viewMore(){
     document.getElementById("viewMore").style.display="block";
     document.getElementById("aViewMore").style.display="none";
     document.getElementById("viewLess").style.display="block";  
 }
+
 function viewLess(){
     document.getElementById("viewMore").style.display="none";
     document.getElementById("aViewMore").style.display="block";
     document.getElementById("viewLess").style.display="none";  
 }
+
+function getEmployeeByFilter(y){
+    var finalHtml='';
+    for(let b in displayEmployees)
+    {
+        var emp = displayEmployees[b];
+        var department= emp.department;
+        var jobTitle= emp.jobTitle;
+        var office= emp.office;
+        if(department == y || jobTitle == y || office == y){
+        var employee = `<div class="employee">
+        <img src="../Images/user.jpg" alt="Employee Image"/>
+        <div class= "employee-details" >
+        <h3>${emp.preferredName}</h3>
+        <p>${emp.jobTitle}</p>
+        <p>${emp.department} Department</p>
+			<div class="icons">
+			<ion-icon name="call"></ion-icon>
+			<ion-icon name="mail"></ion-icon>
+			<ion-icon name="text"></ion-icon>
+			<ion-icon name="star"></ion-icon>
+			<ion-icon name="heart"></ion-icon>
+			</div>
+		</div>
+		</div>`;
+		finalHtml += employee;
+        }
+    }
+    document.getElementById("employeeListSpace").innerHTML=finalHtml;
+}
+/////////////////////////////////////////////////////////////////////
+
+// const target = document.querySelector('#alphabetSearchButtons')
+
+// document.addEventListener('click', (event) => {
+//   const withinBoundaries = event.composedPath().includes(target)
+
+//   if (withinBoundaries) {
+    
+//   } else {
+//     getHtmlForEmployeeList();
+//   } 
+// })

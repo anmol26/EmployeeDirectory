@@ -19,7 +19,6 @@
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
   </head>
   <body onload="getHtmlForEmployeeList();">
-      <!-- onload="getHtmlForEmployeeList(),updateCount()" -->
     <div class="formPopup" id="myForm" > 
         <form class="newEmployee"  onsubmit="addEmployee(); return false;">
             <h2 class="formHeading">Add New Employee</h2>
@@ -93,45 +92,44 @@
     <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
     <div class="container-fluid mt-4">
       <div class="row g-0">
-        <div class="col-md-3 leftSideBar" >
+        <div class="col-md-3 leftSideBar" style="cursor: context-menu;" >
         <div class="departments"  >
           <h6 class="ms-4">Departments</h6>
           <ul>
-            <li id="it">IT(<span id="itNo">0</span>)</li>
-            <li id="hr">Human Resources(<span id="hrNo">0</span>)</li>
-            <li id="md">MD(<span id="mdNo">0</span>)</li>
-            <li id="sales" >Sales(<span id="salesNo">0</span>)</li>
+            <li id="it" onclick="getEmployeeByFilter('IT')">IT(<span id="itNo">0</span>)</li>
+            <li id="hr" onclick="getEmployeeByFilter('Human Resources')">Human Resources(<span id="hrNo">0</span>)</li>
+            <li id="md" onclick="getEmployeeByFilter('MD')">MD(<span id="mdNo">0</span>)</li>
+            <li id="sales" onclick="getEmployeeByFilter('Sales')">Sales(<span id="salesNo">0</span>)</li>
           </ul>
         </div>
         <div class="offices">
           <h6 class="ms-4">Offices</h6>
           <ul>
-            <li id="seattle">Seattle(<span id="seattleOffice">0</span>)</li>
-            <li id="india">India(<span id="indiaOffice">0</span>)</li>
+            <li id="seattle" onclick="getEmployeeByFilter('Seattle')">Seattle(<span id="seattleOffice">0</span>)</li>
+            <li id="india" onclick="getEmployeeByFilter('India')">India(<span id="indiaOffice">0</span>)</li>
           </ul>
         </div>
         <div class="jobTitles">
           <h6 class="ms-4">Job Titles</h6>
           <ul>
-            <li id="sph">
+            <li id="sph" onclick="getEmployeeByFilter('SharePoint Practice Head')">
               SharePoint Practice Head(<span id="sphNo">0</span>)
             </li>
-            <li id="ndl">.Net Development Lead(<span id="ndlNo">0</span>)</li>
-            <li id="re">Recruiting Expert(<span id="reNo">0</span>)</li>
-            <a id="aViewMore" style="color: rgba(14, 180, 252, 255); cursor: context-menu;" onclick="viewMore()">View more</a>
+            <li id="ndl" onclick="getEmployeeByFilter('.Net Development Lead')">.Net Development Lead(<span id="ndlNo">0</span>)</li>
+            <li id="re" onclick="getEmployeeByFilter('Recruiting Expert')">Recruiting Expert(<span id="reNo">0</span>)</li>
+            <a id="aViewMore" style="color: rgba(14, 180, 252, 255);" onclick="viewMore()">View more</a>
             <div id="viewMore" style="display:none">
-            <li id="bi">BI Developer(<span id="biNo">0</span>)</li>
-            <li id="ba">Business Analyst(<span id="baNo">0</span>)</li>
-            <a id="aViewLess" style="color: rgba(14, 180, 252, 255); cursor: context-menu;" onclick="viewLess()">View less</a>
+            <li id="bi" onclick="getEmployeeByFilter('BI Developer')">BI Developer(<span id="biNo">0</span>)</li>
+            <li id="ba" onclick="getEmployeeByFilter('Business Analyst')">Business Analyst(<span id="baNo">0</span>)</li>
+            <a id="aViewLess" style="color: rgba(14, 180, 252, 255);" onclick="viewLess()">View less</a>
             </div>
-            <!-- <a style="color: rgba(14, 180, 252, 255)" onclick="viewMore()">view more</a> -->
           </ul>
         </div>
         </div>
         
     <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
         <div class="col-md-9 rightSideBar">
-            <div class="alphabetSearchButtons">
+            <div class="alphabetSearchButton" id="alphabetSearchButtons">
             <button type="button" class="btn rounded-0 btn-sm" onclick="getHtmlForEmployeeList()"><ion-icon name="person"></ion-icon></button>
             <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('A')">A</button>
             <button type="button" class="btn rounded-0 btn-sm" onclick="getEmployeeByAttr('B')">B</button>
@@ -200,5 +198,10 @@
     type="module"
     src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js">
 </script>
+<script>
+    $('body').click(function(){
+    console.log('clicked');
+    });
+  </script>
   </body>
 </html>

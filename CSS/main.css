@@ -91,11 +91,16 @@ body .leftSideBar ul li {
   list-style: none;
 }
 
+body .leftSideBar ul li:hover {
+  background: rgba(0, 0, 0, 0.1);
+  width: 70%;
+}
+
 body .leftSideBar ul a {
   color: red;
 }
 
-body .rightSideBar .alphabetSearchButtons button {
+body .rightSideBar .alphabetSearchButton button {
   background-color: #00b1fc;
   color: white;
 }
