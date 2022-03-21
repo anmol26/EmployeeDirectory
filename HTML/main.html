@@ -92,7 +92,8 @@
     <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
     <div class="container-fluid mt-4">
       <div class="row g-0">
-        <div class="col-md-3 leftSideBar" style="cursor: context-menu;" >
+        <div class="col-md-3 leftSideBar" style="cursor: pointer">
+             <!--"cursor: context-menu;"  -->
         <div class="departments"  >
           <h6 class="ms-4">Departments</h6>
           <ul>
@@ -117,11 +118,11 @@
             </li>
             <li id="ndl" onclick="getEmployeeByFilter('.Net Development Lead')">.Net Development Lead(<span id="ndlNo">0</span>)</li>
             <li id="re" onclick="getEmployeeByFilter('Recruiting Expert')">Recruiting Expert(<span id="reNo">0</span>)</li>
-            <a id="aViewMore" style="color: rgba(14, 180, 252, 255);" onclick="viewMore()">View more</a>
+            <a id="aViewMore" style="color: rgba(14, 180, 252, 255);" onclick="viewMore()"><b>View more</b></a>
             <div id="viewMore" style="display:none">
             <li id="bi" onclick="getEmployeeByFilter('BI Developer')">BI Developer(<span id="biNo">0</span>)</li>
             <li id="ba" onclick="getEmployeeByFilter('Business Analyst')">Business Analyst(<span id="baNo">0</span>)</li>
-            <a id="aViewLess" style="color: rgba(14, 180, 252, 255);" onclick="viewLess()">View less</a>
+            <a style="color: rgba(14, 180, 252, 255);" onclick="viewLess()"><b>View less</b></a>
             </div>
           </ul>
         </div>
@@ -159,12 +160,17 @@
             <button type="button" class="btn rounded-0 btn-sm" id="Z" onclick="getEmployeeByAttr('Z')">Z</button>
         </div>
     <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-    <div class="searchFilterBySection mt-3">
+    <div class="searchFilterBySection mt-3 row"> <!--163 164 168 -->
+        <div class="col-md-auto">
             <h6>Search</h6> 
-            <input class="form-control rounded-0 ms-2" id="search" type="text" placeholder="&#x1F50D; Enter any keyword" oninput="getEmployeeByDetail(this.value)">
-            <button type="button" onclick="clearsearch()" class="btn rounded-0 btn-sm clearButton" style="margin-left:1rem; height:2.2rem; display:inline-flexbox" >Clear</button>
-            
-            <label for="filter"><h6 style="margin-left:2rem">Filter by</h6></label>
+            <input class="form-control rounded-0 ms-2" id="search" type="text" placeholder="&#x1F50D; " oninput="getEmployeeByDetail(this.value)">
+        <!-- </div> -->
+        <!-- <div class="col">     -->
+            <button type="button" onclick="clearsearch()" class="btn rounded-0 btn-sm clearButton ms-2" >Clear</button>
+            <!-- style="margin-left:1rem; height:2.2rem; display:inline-flexbox" -->
+        </div>  
+        <div class="col-md-auto">
+            <label for="filter"><h6>Filter by</h6></label>
             <select name="filter" id="filter" style="height: 35px;"> 
                 <option value="firstName">First Name</option>
                 <option value="lastName">Last Name</option>
@@ -178,13 +184,14 @@
                 <option value="phoneNumber">Phone Number</option>
                 <option value="skypeId">Skype ID</option>
             </select>
-
-
-    <button type="button" class="btn rounded-0 btn-sm addEmployee" onclick="openEmployeeForm()" style="margin-left:1rem; height:2rem; display:inline-flexbox; background-color: #00b1fc; margin-left: 150px;margin-top: -0.3rem;
-    color: white;" ><h6>Add Employee</h6></button>
-<!-- ///////////////////////////////////////////////////////////////////////////////// -->
-
-
+        <!-- </div>  -->
+        <!-- <div class="col-md-auto"> -->
+    <button type="button" class="btn btn-sm addEmployee pt-2" onclick="openEmployeeForm()" 
+    style="background-color: #00b1fc; color: white; margin-left:50px; " ><h6>Add Employee</h6></button>
+        </div>
+<!-- ////////////////////////////////////margin-left:1rem; height:2rem; margin-left: 150px;margin-top: -0.3rem; display:inline-flexbox;///////////////////////////////////////////// -->
+    </div>
+    <div>
     <p><h6>Note: </h6> Please use the advanced filter options to refine your results.</p>
     </div>
         <div class="border mt-2 employeeListSpace">  
@@ -198,10 +205,10 @@
     type="module"
     src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js">
 </script>
-<script>
+<!-- <script>
     $('body').click(function(){
     console.log('clicked');
     });
-  </script>
+  </script> -->
   </body>
 </html>
