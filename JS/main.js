@@ -315,15 +315,3 @@ function getEmployeeByFilter(y){
     document.getElementById("employeeListSpace").innerHTML=finalHtml;
 }
 /////////////////////////////////////////////////////////////////////
-
-// const target = document.querySelector('#alphabetSearchButtons')
-
-// document.addEventListener('click', (event) => {
-//   const withinBoundaries = event.composedPath().includes(target)
-
-//   if (withinBoundaries) {
-    
-//   } else {
-//     getHtmlForEmployeeList();
-//   } 
-// })

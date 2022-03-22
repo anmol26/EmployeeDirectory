@@ -93,6 +93,9 @@ body {
         background-color: #00b1fc;
         color: white;
       }
+      button:hover {
+        background-color: green;
+      }
       button:focus {
         background-color: red;
       }
@@ -147,6 +150,61 @@ body {
       .icons ion-icon {
         color: #a9a8a8;
       }
+    }
+  }
+}
+//////////////////////////////////////////////
+.formPopup1 {
+  //   display: none;
+  //   position: fixed;
+  //   width: 100%;
+  //   height: 100%;
+  //   z-index: 1;
+  //   background: rgba(0, 0, 0, 0.8);
+  //   align-items: center;
+
+  .newEmployee {
+    width: 40%;
+    margin: auto;
+    background: #00b1fc;
+    height: fit-content;
+  }
+
+  h2 {
+    text-align: center;
+    color: rgb(187, 42, 42);
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  label {
+    margin-left: 2%;
+    font-weight: bold;
+  }
+
+  select {
+    width: 75%;
+    height: 20px;
+  }
+  option {
+    font-size: smaller;
+  }
+  input {
+    width: 70%;
+    margin-bottom: 2%;
+    border: 1px solid #737373;
+    height: 20px;
+  }
+  .employeeFormButton {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    .submit {
+      background-color: #69ba00;
+      font-weight: bolder;
+    }
+    .close {
+      background-color: rgb(173, 46, 46);
+      font-weight: bolder;
     }
   }
 }

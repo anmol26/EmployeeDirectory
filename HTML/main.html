@@ -118,11 +118,11 @@
             </li>
             <li id="ndl" onclick="getEmployeeByFilter('.Net Development Lead')">.Net Development Lead(<span id="ndlNo">0</span>)</li>
             <li id="re" onclick="getEmployeeByFilter('Recruiting Expert')">Recruiting Expert(<span id="reNo">0</span>)</li>
-            <a id="aViewMore" style="color: rgba(14, 180, 252, 255);" onclick="viewMore()"><b>View more</b></a>
+            <a id="aViewMore" style="color: rgba(14, 180, 252, 255);" onmouseover="this.style.textDecoration = 'underline'" onmouseout="this.style.textDecoration = 'none'" onclick="viewMore()"><b>View more</b></a>
             <div id="viewMore" style="display:none">
             <li id="bi" onclick="getEmployeeByFilter('BI Developer')">BI Developer(<span id="biNo">0</span>)</li>
             <li id="ba" onclick="getEmployeeByFilter('Business Analyst')">Business Analyst(<span id="baNo">0</span>)</li>
-            <a style="color: rgba(14, 180, 252, 255);" onclick="viewLess()"><b>View less</b></a>
+            <a style="color: rgba(14, 180, 252, 255);" onmouseover="this.style.textDecoration = 'underline'" onmouseout="this.style.textDecoration = 'none'" onclick="viewLess()"><b>View less</b></a>
             </div>
           </ul>
         </div>
@@ -187,10 +187,113 @@
         <!-- </div>  -->
         <!-- <div class="col-md-auto"> -->
     <button type="button" class="btn btn-sm addEmployee pt-2" onclick="openEmployeeForm()" 
-    style="background-color: #00b1fc; color: white; margin-left:50px; " ><h6>Add Employee</h6></button>
+    style="background-color: #00b1fc; color: white; margin-left:50px;"><h6>Add Employee</h6></button>
         </div>
 <!-- ////////////////////////////////////margin-left:1rem; height:2rem; margin-left: 150px;margin-top: -0.3rem; display:inline-flexbox;///////////////////////////////////////////// -->
     </div>
+    
+    <!-- /////////////check-1/////////////// -->
+<!-- Button trigger modal -->
+<div class="container">
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+     Add Employee
+    </button>
+
+    <!-- Modal -->
+    <div class="formPopup1" id="myForm" > 
+    <form class="newEmployee" onsubmit="addEmployee(); return false;">
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add New Employee Form</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+
+            <div class="mb-1">
+            <label for="firstName" class="col-form-label" value="firstName">First Name</label>
+            <input id="firstName" class="form-control" type="text" required />
+            </div>
+            <div class="mb-1">
+            <label for="lastName" class="col-form-label">Last Name</label>
+            <input id="lastName" class="form-control" type="text" required />
+            </div>
+            <div class="mb-1">
+            <label for="preferredName" class="col-form-label">Preferred Name</label>
+            <input id="preferredName" class="form-control" type="text" />
+            </div>
+            <div class="mb-1">
+            <label for="email" class="col-form-label">Email</label>
+            <input id="email" class="form-control" type="email" />
+            </div>
+            <div class="mb-1">
+            <label for="jobTitle" class="col-form-label">Job Title</label>
+            <select name="jobTitle" class="form-select" id="jobTitle" required>
+                <option value="SharePoint Practice Head" selected>
+                    SharePoint Practice Head
+                </option>
+                <option value=".Net Development Lead">.Net Development Lead</option>
+                <option value="Recruiting Expert">Recruiting Expert</option>
+                <option value="BI Developer">BI Developer</option>
+                <option value="Business Analyst">Business Analyst</option>
+            </select>
+            </div>
+            <div class="mb-1">
+            <label for="office" class="col-form-label">Office</label>
+            <select name="office" class="form-select" id="office" required>
+                <option value="India">India</option>
+                <option value="Seattle">Seattle</option>
+            </select>
+            </div>
+            <div class="mb-1">
+            <label for="department" class="col-form-label">Department</label>
+            <select name="department" class="form-select" id="department" required>
+                <option value="IT">IT</option>
+                <option value="Human Resources">Human Resources</option>
+                <option value="MD">MD</option>
+                <option value="Sales">Sales</option>
+            </select>
+            </div>
+            <div class="mb-1">
+            <label for="phoneNumber" class="col-form-label">Phone Number</label>
+            <input id="phoneNumber" class="form-control" type="tel"  required />
+            </div>
+            <div class="mb-1">
+            <label for="skypeId" class="col-form-label">Skype ID</label>
+            <input id="skypeId" class="form-control" type="text" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="close" type="button" onclick="closeEmployeeForm();">
+                Close
+            </button>
+            <button class="submit" type="submit" >Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</form>
+</div>
+  </div>
+<!-- //////////check end-1//////////// -->
     <div>
     <p><h6>Note: </h6> Please use the advanced filter options to refine your results.</p>
     </div>
@@ -201,14 +304,16 @@
     </div>
     </div>
     </div>
+<!-- For Icons -->
 <script
     type="module"
     src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js">
 </script>
-<!-- <script>
-    $('body').click(function(){
-    console.log('clicked');
-    });
-  </script> -->
+<!-- For Add new employee pop up -->
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
+crossorigin="anonymous"
+></script>
   </body>
 </html>

@@ -101,6 +101,10 @@ body .rightSideBar .alphabetSearchButton button {
   color: white;
 }
 
+body .rightSideBar .alphabetSearchButton button:hover {
+  background-color: green;
+}
+
 body .rightSideBar .alphabetSearchButton button:focus {
   background-color: red;
 }
@@ -167,5 +171,58 @@ body .rightSideBar .employee-details p {
 
 body .rightSideBar .employee-details .icons ion-icon {
   color: #a9a8a8;
+}
+
+.formPopup1 .newEmployee {
+  width: 40%;
+  margin: auto;
+  background: #00b1fc;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.formPopup1 h2 {
+  text-align: center;
+  color: #bb2a2a;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.formPopup1 label {
+  margin-left: 2%;
+  font-weight: bold;
+}
+
+.formPopup1 select {
+  width: 75%;
+  height: 20px;
+}
+
+.formPopup1 option {
+  font-size: smaller;
+}
+
+.formPopup1 input {
+  width: 70%;
+  margin-bottom: 2%;
+  border: 1px solid #737373;
+  height: 20px;
+}
+
+.formPopup1 .employeeFormButton {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.formPopup1 .employeeFormButton .submit {
+  background-color: #69ba00;
+  font-weight: bolder;
+}
+
+.formPopup1 .employeeFormButton .close {
+  background-color: #ad2e2e;
+  font-weight: bolder;
 }
 /*# sourceMappingURL=main.css.map */
