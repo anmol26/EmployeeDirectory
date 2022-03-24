@@ -19,7 +19,98 @@
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
   </head>
   <body onload="getHtmlForEmployeeList();">
-    <div class="formPopup" id="myForm" > 
+
+    <!-- ///////////new form start////////////////////////////// -->
+    <div class="formPopup1" id="myForm" > 
+        <form class="newEmployee" onsubmit="addEmployee(); return false;">
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add New Employee Form</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="mb-1">
+                <label for="firstName" class="col-form-label" value="firstName">First Name</label>
+                <input id="firstName" class="form-control" type="text" required />
+                </div>
+                <div class="mb-1">
+                <label for="lastName" class="col-form-label">Last Name</label>
+                <input id="lastName" class="form-control" type="text" required />
+                </div>
+                <div class="mb-1">
+                <label for="preferredName" class="col-form-label">Preferred Name</label>
+                <input id="preferredName" class="form-control" type="text" />
+                </div>
+                <div class="mb-1">
+                <label for="email" class="col-form-label">Email</label>
+                <input id="email" class="form-control" type="email" />
+                </div>
+                <div class="mb-1">
+                <label for="jobTitle" class="col-form-label">Job Title</label>
+                <select name="jobTitle"  id="jobTitle" required>
+                    <option value="SharePoint Practice Head" selected>
+                        SharePoint Practice Head
+                    </option>
+                    <option value=".Net Development Lead">.Net Development Lead</option>
+                    <option value="Recruiting Expert">Recruiting Expert</option>
+                    <option value="BI Developer">BI Developer</option>
+                    <option value="Business Analyst">Business Analyst</option>
+                </select>
+                </div>
+                <div class="mb-1">
+                <label for="office" class="col-form-label">Office</label>
+                <select name="office"  id="office" required>
+                    <option value="India">India</option>
+                    <option value="Seattle">Seattle</option>
+                </select>
+                </div>
+                <div class="mb-1">
+                <label for="department" class="col-form-label">Department</label>
+                <select name="department"  id="department" required>
+                    <option value="IT">IT</option>
+                    <option value="Human Resources">Human Resources</option>
+                    <option value="MD">MD</option>
+                    <option value="Sales">Sales</option>
+                </select>
+                </div>
+                <div class="mb-1">
+                <label for="phoneNumber" class="col-form-label">Phone Number</label>
+                <input id="phoneNumber" class="form-control" type="tel"  required />
+                </div>
+                <div class="mb-1">
+                <label for="skypeId" class="col-form-label">Skype ID</label>
+                <input id="skypeId" class="form-control" type="text" />
+                </div>
+              </div>
+              <div class="modal-footer">
+                <!-- <button class="close" type="button" onclick="closeEmployeeForm();"> -->
+                    <button type="button"
+                    class="close"
+                    data-bs-dismiss="modal">
+                    Close
+                </button>
+                <button class="submit" type="submit">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </form>
+    </div>
+    <!--////////////////// new form end///////////////////////////// -->
+    <!-- <div class="formPopup" id="myForm" > 
         <form class="newEmployee"  onsubmit="addEmployee(); return false;">
             <h2 class="formHeading">Add New Employee</h2>
             <label for="firstName" value="firstName">First Name</label>
@@ -63,7 +154,7 @@
                 </button>
             </div>
         </form>
-    </div>
+    </div> -->
     <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
     <div class="container-fluid">
       <div style="display: inline-flex">
@@ -184,18 +275,29 @@
                 <option value="phoneNumber">Phone Number</option>
                 <option value="skypeId">Skype ID</option>
             </select>
+        </div>
         <!-- </div>  -->
         <!-- <div class="col-md-auto"> -->
-    <button type="button" class="btn btn-sm addEmployee pt-2" onclick="openEmployeeForm()" 
-    style="background-color: #00b1fc; color: white; margin-left:50px;"><h6>Add Employee</h6></button>
-        </div>
+    <!-- <button type="button" class="btn btn-sm addEmployee pt-2" onclick="openEmployeeForm()" 
+    style="background-color: #00b1fc; color: white; margin-left:50px;"><h6>Add Employee</h6></button> -->
+    <div class="container col-md-auto">
+        <!-- Button trigger modal -->
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+         Add Employee
+        </button>
+      </div>
+        
 <!-- ////////////////////////////////////margin-left:1rem; height:2rem; margin-left: 150px;margin-top: -0.3rem; display:inline-flexbox;///////////////////////////////////////////// -->
     </div>
     
     <!-- /////////////check-1/////////////// -->
 <!-- Button trigger modal -->
-<div class="container">
-    <!-- Button trigger modal -->
+<!-- <div class="container">
     <button
       type="button"
       class="btn btn-primary"
@@ -204,95 +306,7 @@
     >
      Add Employee
     </button>
-
-    <!-- Modal -->
-    <div class="formPopup1" id="myForm" > 
-    <form class="newEmployee" onsubmit="addEmployee(); return false;">
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Add New Employee Form</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-
-            <div class="mb-1">
-            <label for="firstName" class="col-form-label" value="firstName">First Name</label>
-            <input id="firstName" class="form-control" type="text" required />
-            </div>
-            <div class="mb-1">
-            <label for="lastName" class="col-form-label">Last Name</label>
-            <input id="lastName" class="form-control" type="text" required />
-            </div>
-            <div class="mb-1">
-            <label for="preferredName" class="col-form-label">Preferred Name</label>
-            <input id="preferredName" class="form-control" type="text" />
-            </div>
-            <div class="mb-1">
-            <label for="email" class="col-form-label">Email</label>
-            <input id="email" class="form-control" type="email" />
-            </div>
-            <div class="mb-1">
-            <label for="jobTitle" class="col-form-label">Job Title</label>
-            <select name="jobTitle" class="form-select" id="jobTitle" required>
-                <option value="SharePoint Practice Head" selected>
-                    SharePoint Practice Head
-                </option>
-                <option value=".Net Development Lead">.Net Development Lead</option>
-                <option value="Recruiting Expert">Recruiting Expert</option>
-                <option value="BI Developer">BI Developer</option>
-                <option value="Business Analyst">Business Analyst</option>
-            </select>
-            </div>
-            <div class="mb-1">
-            <label for="office" class="col-form-label">Office</label>
-            <select name="office" class="form-select" id="office" required>
-                <option value="India">India</option>
-                <option value="Seattle">Seattle</option>
-            </select>
-            </div>
-            <div class="mb-1">
-            <label for="department" class="col-form-label">Department</label>
-            <select name="department" class="form-select" id="department" required>
-                <option value="IT">IT</option>
-                <option value="Human Resources">Human Resources</option>
-                <option value="MD">MD</option>
-                <option value="Sales">Sales</option>
-            </select>
-            </div>
-            <div class="mb-1">
-            <label for="phoneNumber" class="col-form-label">Phone Number</label>
-            <input id="phoneNumber" class="form-control" type="tel"  required />
-            </div>
-            <div class="mb-1">
-            <label for="skypeId" class="col-form-label">Skype ID</label>
-            <input id="skypeId" class="form-control" type="text" />
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button class="close" type="button" onclick="closeEmployeeForm();">
-                Close
-            </button>
-            <button class="submit" type="submit" >Submit</button>
-          </div>
-        </div>
-      </div>
-    </div>
-</form>
-</div>
-  </div>
+  </div> -->
 <!-- //////////check end-1//////////// -->
     <div>
     <p><h6>Note: </h6> Please use the advanced filter options to refine your results.</p>

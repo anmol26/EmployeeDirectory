@@ -18,14 +18,15 @@ let employees = [
 let displayEmployees = employees;
 
 
-function openEmployeeForm() {
-    let formPopup = document.getElementById("myForm");
-    formPopup.style.display = "flex";
-    formPopup.style.zIndex=999;
+// function openEmployeeForm() {
+//     let formPopup = document.getElementById("myForm");
+//     formPopup.style.display = "flex";
+//     formPopup.style.zIndex=1;
 
-  }
+//   }
 function closeEmployeeForm(){
-    document.getElementById("myForm").style.display = "none"; 
+    document.getElementById("myForm").style.display = "none";
+
 }
 function clearsearch(){
     document.getElementById("search").value="";

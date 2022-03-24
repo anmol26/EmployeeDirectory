@@ -4,71 +4,6 @@ body {
   margin: 0;
 }
 
-body .formPopup {
-  display: none;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  background: rgba(0, 0, 0, 0.8);
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-body .formPopup .newEmployee {
-  width: 40%;
-  margin: auto;
-  background: #00b1fc;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-body .formPopup h2 {
-  text-align: center;
-  color: #bb2a2a;
-  margin-top: 20px;
-  margin-bottom: 30px;
-}
-
-body .formPopup label {
-  margin-left: 2%;
-  font-weight: bold;
-}
-
-body .formPopup select {
-  width: 75%;
-  height: 20px;
-}
-
-body .formPopup option {
-  font-size: smaller;
-}
-
-body .formPopup input {
-  width: 70%;
-  margin-bottom: 2%;
-  border: 1px solid #737373;
-  height: 20px;
-}
-
-body .formPopup .employeeFormButton {
-  text-align: center;
-  margin-top: 40px;
-  margin-bottom: 20px;
-}
-
-body .formPopup .employeeFormButton .submit {
-  background-color: #69ba00;
-  font-weight: bolder;
-}
-
-body .formPopup .employeeFormButton .close {
-  background-color: #ad2e2e;
-  font-weight: bolder;
-}
-
 body .logoText p {
   font-weight: 500;
   color: #7e7d7d;
@@ -174,29 +109,19 @@ body .rightSideBar .employee-details .icons ion-icon {
 }
 
 .formPopup1 .newEmployee {
-  width: 40%;
   margin: auto;
-  background: #00b1fc;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
 
-.formPopup1 h2 {
-  text-align: center;
-  color: #bb2a2a;
-  margin-top: 20px;
-  margin-bottom: 30px;
-}
-
 .formPopup1 label {
-  margin-left: 2%;
   font-weight: bold;
 }
 
 .formPopup1 select {
-  width: 75%;
-  height: 20px;
+  width: 100%;
+  border: 1px solid black;
 }
 
 .formPopup1 option {
@@ -204,25 +129,17 @@ body .rightSideBar .employee-details .icons ion-icon {
 }
 
 .formPopup1 input {
-  width: 70%;
-  margin-bottom: 2%;
-  border: 1px solid #737373;
+  width: 100%;
+  margin-bottom: 1%;
+  border: 1px solid black;
   height: 20px;
 }
 
-.formPopup1 .employeeFormButton {
-  text-align: center;
-  margin-top: 40px;
-  margin-bottom: 20px;
-}
-
 .formPopup1 .employeeFormButton .submit {
-  background-color: #69ba00;
   font-weight: bolder;
 }
 
 .formPopup1 .employeeFormButton .close {
-  background-color: #ad2e2e;
   font-weight: bolder;
 }
 /*# sourceMappingURL=main.css.map */
