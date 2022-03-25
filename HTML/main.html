@@ -22,7 +22,7 @@
 
     <!-- ///////////new form start////////////////////////////// -->
     <div class="formPopup1" id="myForm" > 
-        <form class="newEmployee" onsubmit="addEmployee(); return false;">
+        <form class="newEmployee" onsubmit="addEmployee(this); return false;">
         <div
           class="modal fade"
           id="exampleModal"
@@ -284,7 +284,7 @@
         <!-- Button trigger modal -->
         <button
           type="button"
-          class="btn btn-primary"
+          class="btn btn-primary addEmployee"
           data-bs-toggle="modal"
           data-bs-target="#exampleModal"
         >
@@ -311,8 +311,8 @@
     <div>
     <p><h6>Note: </h6> Please use the advanced filter options to refine your results.</p>
     </div>
-        <div class="border mt-2 employeeListSpace">  
-            <div id="employeeListSpace"></div>
+        <div class="border mt-2 employeeListSpace container">  
+            <div id="employeeListSpace" class="row row-cols-3 gy-2 gx-2"></div>
         </div>
 
     </div>

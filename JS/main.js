@@ -1,5 +1,3 @@
-
-
 let employees = [
 	{
 		firstName: 'Anmol',
@@ -21,11 +19,13 @@ let displayEmployees = employees;
 // function openEmployeeForm() {
 //     let formPopup = document.getElementById("myForm");
 //     formPopup.style.display = "flex";
-//     formPopup.style.zIndex=1;
 
 //   }
 function closeEmployeeForm(){
     document.getElementById("myForm").style.display = "none";
+    //document.getElementById("myForm").style.blur = "none";
+    //document.getElementById("exampleModal").style.display = "none";
+    //document.getElementById("myForm").style.zIndex = -999;
 
 }
 function clearsearch(){
@@ -111,7 +111,7 @@ function getHtmlForEmployeeList() {
     for (let a in displayEmployees)
     {
         var emp = displayEmployees[a];
-        var employee = `<div class="employee">
+        var employee = `<div class="employee col">
         <img src="../Images/user.jpg" alt="Employee Image"/>
         <div class= "employee-details" >
         <h3>${emp.preferredName}</h3>
@@ -132,7 +132,7 @@ function getHtmlForEmployeeList() {
     updateCount();
 }
 
-function addEmployee(){
+function addEmployee(element){
     displayEmployees.push(
         {   firstName: document.getElementById('firstName').value,
             lastName: document.getElementById('lastName').value,
@@ -144,7 +144,9 @@ function addEmployee(){
             phoneNumber:document.getElementById('phoneNumber').value,
             skypeId:document.getElementById('skypeId').value,
         });
-    closeEmployeeForm();
+   // document.body.blur=0;
+   const closeButton = element.querySelector(".close");
+   closeButton.click();
     updateCount();
     getHtmlForEmployeeList();
 }
