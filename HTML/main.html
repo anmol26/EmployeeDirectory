@@ -23,7 +23,11 @@
   </head>
   <body onload="getHtmlForEmployeeList();">
     <div class="formPopup1" id="myForm">
-      <form class="newEmployee" onsubmit="addEmployee(this); return false;">
+      <form
+        class="newEmployee needs-validation was-validated"
+        onsubmit="addEmployee(this); return false;"
+      >
+        <!-- was-validated -->
         <div
           class="modal fade"
           id="exampleModal"
@@ -45,11 +49,8 @@
                 ></button>
               </div>
               <div class="modal-body">
-                <div class="mb-1">
-                  <label
-                    for="firstName"
-                    class="col-form-label"
-                    value="firstName"
+                <div>
+                  <label for="firstName" class="form-label" value="firstName"
                     >First Name</label
                   >
                   <input
@@ -58,8 +59,10 @@
                     type="text"
                     required
                   />
+                  <div class="invalid-feedback">Please enter a Firstname.</div>
                 </div>
-                <div class="mb-1">
+                <!-- <div class="valid-feedback">Looks good!</div> -->
+                <div>
                   <label for="lastName" class="col-form-label">Last Name</label>
                   <input
                     id="lastName"
@@ -67,21 +70,40 @@
                     type="text"
                     required
                   />
+                  <div class="invalid-feedback">Please enter a Lastname.</div>
                 </div>
-                <div class="mb-1">
+                <div>
                   <label for="preferredName" class="col-form-label"
                     >Preferred Name</label
                   >
-                  <input id="preferredName" class="form-control" type="text" />
+                  <input
+                    id="preferredName"
+                    class="form-control"
+                    type="text"
+                    required
+                  />
+                  <div class="invalid-feedback">Please enter a Lastname.</div>
                 </div>
-                <div class="mb-1">
+                <div>
                   <label for="email" class="col-form-label">Email</label>
-                  <input id="email" class="form-control" type="email" />
+                  <input
+                    id="email"
+                    class="form-control"
+                    type="email"
+                    required
+                  />
+                  <div class="invalid-feedback">Please fill email.</div>
                 </div>
-                <div class="mb-1">
-                  <label for="jobTitle" class="col-form-label">Job Title</label>
+                <div>
+                  <label
+                    for="jobTitle"
+                    class="col-form-label"
+                    aria-label="select example"
+                    >Job Title</label
+                  >
                   <select name="jobTitle" id="jobTitle" required>
-                    <option value="SharePoint Practice Head" selected>
+                    <option selected disabled value="">Select JobTitle</option>
+                    <option value="SharePoint Practice Head">
                       SharePoint Practice Head
                     </option>
                     <option value=".Net Development Lead">
@@ -91,26 +113,32 @@
                     <option value="BI Developer">BI Developer</option>
                     <option value="Business Analyst">Business Analyst</option>
                   </select>
+                  <div class="invalid-feedback">Please select jobTitle</div>
                 </div>
-                <div class="mb-1">
+                <div>
                   <label for="office" class="col-form-label">Office</label>
                   <select name="office" id="office" required>
+                    <option selected disabled value="">Select Office</option>
                     <option value="India">India</option>
                     <option value="Seattle">Seattle</option>
                   </select>
+                  <div class="invalid-feedback">Please select Office</div>
                 </div>
-                <div class="mb-1">
+                <div>
                   <label for="department" class="col-form-label"
                     >Department</label
                   >
                   <select name="department" id="department" required>
+                    <option selected disabled value="">
+                      Select Department
+                    </option>
                     <option value="IT">IT</option>
                     <option value="Human Resources">Human Resources</option>
                     <option value="MD">MD</option>
                     <option value="Sales">Sales</option>
                   </select>
                 </div>
-                <div class="mb-1">
+                <div>
                   <label for="phoneNumber" class="col-form-label"
                     >Phone Number</label
                   >
@@ -120,8 +148,11 @@
                     type="tel"
                     required
                   />
+                  <div class="invalid-feedback">
+                    Please enter a MobileNumber.
+                  </div>
                 </div>
-                <div class="mb-1">
+                <div>
                   <label for="skypeId" class="col-form-label">Skype ID</label>
                   <input id="skypeId" class="form-control" type="text" />
                 </div>
@@ -158,14 +189,14 @@
         class="welcomeText mt-3 me-5"
         style="display: inline-flex; float: right"
       >
-        <p class="" style="font-size: 2rem">
+        <p style="font-size: 2rem">
           <span>Welcome,</span> Anmol Khandelwal
           <img src="../Images/user.jpg" alt="user" width="60" height="60" />
         </p>
       </div>
     </div>
     <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-    <hr class="container-fluid mt-0" style="width: 92%; color: #414141" />
+    <hr class="container-fluid mt-0" style="width: 95%; color: #414141" />
     <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
     <div class="container-fluid mt-4">
       <div class="row g-0">
@@ -368,6 +399,7 @@
             <button
               type="button"
               class="btn rounded-0 btn-sm"
+              style="margin-top: 0.1rem"
               id="O"
               onclick="getEmployeeByAttr('O')"
             >
@@ -533,3 +565,6 @@
     ></script>
   </body>
 </html>
+<!-- /////////////////////////////////////// -->
+<!-- hr line -->
+<!-- form validations -->

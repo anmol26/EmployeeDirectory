@@ -60,7 +60,7 @@ body {
       }
     }
     .employeeListSpace {
-      padding: 1.5%;
+      padding: 1%;
       height: 85%;
       border: 1px solid #737373;
     }
@@ -69,7 +69,7 @@ body {
       display: inline-flex;
       background: #e8e9e8;
       align-items: center;
-      padding: 0.5em;
+      padding: 0.5rem;
       margin-right: 5px;
       cursor: context-menu;
 
@@ -110,14 +110,11 @@ body {
     width: 100%;
     border: 1px solid black;
   }
-  option {
-    font-size: smaller;
-  }
   input {
     width: 100%;
     margin-bottom: 1%;
     border: 1px solid black;
-    height: 20px;
+    //height: 20px;
   }
   .employeeFormButton {
     .submit {
@@ -130,11 +127,11 @@ body {
 }
 
 @media screen and (max-width: 500px) {
-  .logo {
-    padding-left: 0;
-    margin-left: 0;
-  }
+  //   .logo {
+  //     padding-left: 0;
+  //     margin-left: 0;
+  //   }
   .employee {
-    width: 80%;
+    width: 70%;
   }
 }

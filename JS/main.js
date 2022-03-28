@@ -306,4 +306,41 @@ function getEmployeeByFilter(y){
     }
     document.getElementById("employeeListSpace").innerHTML=finalHtml;
 }
+
+let alpha=[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z]
 /////////////////////////////////////////////////////////////////////
+function abc(){
+    let alpha=[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z];
+    for(let alphabet in alpha){
+        var x= ` <button
+        type="button"
+        class="btn rounded-0 btn-sm"
+        id=${alphabet}
+        onclick="getEmployeeByAttr(${alphabet})"
+      >
+      ${alphabet}
+      </button>`;
+    }
+   
+}
+///////////////////////////////////////////////////////////////////////
+
+(function () {
+    'use strict'
+  
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+  
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()
