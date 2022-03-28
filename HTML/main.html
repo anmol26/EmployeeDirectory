@@ -14,15 +14,16 @@
     <link rel="stylesheet" href="../CSS/main.css" />
     <title>Employee-Directory</title>
     <!-- JS file -->
-    <script src="../JS/main.js" ></script>
+    <script src="../JS/main.js"></script>
     <!-- For icon -->
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body onload="getHtmlForEmployeeList();">
-
-    <!-- ///////////new form start////////////////////////////// -->
-    <div class="formPopup1" id="myForm" > 
-        <form class="newEmployee" onsubmit="addEmployee(this); return false;">
+    <div class="formPopup1" id="myForm">
+      <form class="newEmployee" onsubmit="addEmployee(this); return false;">
         <div
           class="modal fade"
           id="exampleModal"
@@ -33,7 +34,9 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add New Employee Form</h5>
+                <h5 class="modal-title" id="exampleModalLabel">
+                  Add New Employee Form
+                </h5>
                 <button
                   type="button"
                   class="btn-close"
@@ -43,123 +46,106 @@
               </div>
               <div class="modal-body">
                 <div class="mb-1">
-                <label for="firstName" class="col-form-label" value="firstName">First Name</label>
-                <input id="firstName" class="form-control" type="text" required />
+                  <label
+                    for="firstName"
+                    class="col-form-label"
+                    value="firstName"
+                    >First Name</label
+                  >
+                  <input
+                    id="firstName"
+                    class="form-control"
+                    type="text"
+                    required
+                  />
                 </div>
                 <div class="mb-1">
-                <label for="lastName" class="col-form-label">Last Name</label>
-                <input id="lastName" class="form-control" type="text" required />
+                  <label for="lastName" class="col-form-label">Last Name</label>
+                  <input
+                    id="lastName"
+                    class="form-control"
+                    type="text"
+                    required
+                  />
                 </div>
                 <div class="mb-1">
-                <label for="preferredName" class="col-form-label">Preferred Name</label>
-                <input id="preferredName" class="form-control" type="text" />
+                  <label for="preferredName" class="col-form-label"
+                    >Preferred Name</label
+                  >
+                  <input id="preferredName" class="form-control" type="text" />
                 </div>
                 <div class="mb-1">
-                <label for="email" class="col-form-label">Email</label>
-                <input id="email" class="form-control" type="email" />
+                  <label for="email" class="col-form-label">Email</label>
+                  <input id="email" class="form-control" type="email" />
                 </div>
                 <div class="mb-1">
-                <label for="jobTitle" class="col-form-label">Job Title</label>
-                <select name="jobTitle"  id="jobTitle" required>
+                  <label for="jobTitle" class="col-form-label">Job Title</label>
+                  <select name="jobTitle" id="jobTitle" required>
                     <option value="SharePoint Practice Head" selected>
-                        SharePoint Practice Head
+                      SharePoint Practice Head
                     </option>
-                    <option value=".Net Development Lead">.Net Development Lead</option>
+                    <option value=".Net Development Lead">
+                      .Net Development Lead
+                    </option>
                     <option value="Recruiting Expert">Recruiting Expert</option>
                     <option value="BI Developer">BI Developer</option>
                     <option value="Business Analyst">Business Analyst</option>
-                </select>
+                  </select>
                 </div>
                 <div class="mb-1">
-                <label for="office" class="col-form-label">Office</label>
-                <select name="office"  id="office" required>
+                  <label for="office" class="col-form-label">Office</label>
+                  <select name="office" id="office" required>
                     <option value="India">India</option>
                     <option value="Seattle">Seattle</option>
-                </select>
+                  </select>
                 </div>
                 <div class="mb-1">
-                <label for="department" class="col-form-label">Department</label>
-                <select name="department"  id="department" required>
+                  <label for="department" class="col-form-label"
+                    >Department</label
+                  >
+                  <select name="department" id="department" required>
                     <option value="IT">IT</option>
                     <option value="Human Resources">Human Resources</option>
                     <option value="MD">MD</option>
                     <option value="Sales">Sales</option>
-                </select>
+                  </select>
                 </div>
                 <div class="mb-1">
-                <label for="phoneNumber" class="col-form-label">Phone Number</label>
-                <input id="phoneNumber" class="form-control" type="tel"  required />
+                  <label for="phoneNumber" class="col-form-label"
+                    >Phone Number</label
+                  >
+                  <input
+                    id="phoneNumber"
+                    class="form-control"
+                    type="tel"
+                    required
+                  />
                 </div>
                 <div class="mb-1">
-                <label for="skypeId" class="col-form-label">Skype ID</label>
-                <input id="skypeId" class="form-control" type="text" />
+                  <label for="skypeId" class="col-form-label">Skype ID</label>
+                  <input id="skypeId" class="form-control" type="text" />
                 </div>
               </div>
               <div class="modal-footer">
-                <!-- <button class="close" type="button" onclick="closeEmployeeForm();"> -->
-                    <button type="button"
-                    class="close"
-                    data-bs-dismiss="modal">
-                    Close
+                <button type="button" class="close" data-bs-dismiss="modal">
+                  Close
                 </button>
                 <button class="submit" type="submit">Submit</button>
               </div>
             </div>
           </div>
         </div>
-    </form>
+      </form>
     </div>
-    <!--////////////////// new form end///////////////////////////// -->
-    <!-- <div class="formPopup" id="myForm" > 
-        <form class="newEmployee"  onsubmit="addEmployee(); return false;">
-            <h2 class="formHeading">Add New Employee</h2>
-            <label for="firstName" value="firstName">First Name</label>
-            <input id="firstName" type="text" required />
-            <label for="lastName">Last Name</label>
-            <input id="lastName" type="text" required />
-            <label for="preferredName">Preferred Name</label>
-            <input id="preferredName" type="text" />
-            <label for="email">Email</label>
-            <input id="email" type="email" /><br>
-            <label for="jobTitle">Job Title</label>
-            <select name="jobTitle" id="jobTitle" required>
-                <option value="SharePoint Practice Head">
-                    SharePoint Practice Head
-                </option>
-                <option value=".Net Development Lead">.Net Development Lead</option>
-                <option value="Recruiting Expert">Recruiting Expert</option>
-                <option value="BI Developer">BI Developer</option>
-                <option value="Business Analyst">Business Analyst</option>
-            </select>
-            <label for="office">Office</label>
-            <select name="office" id="office" required>
-                <option value="India">India</option>
-                <option value="Seattle">Seattle</option>
-            </select>
-            <label for="department">Department</label>
-            <select name="department" id="department" required>
-                <option value="IT">IT</option>
-                <option value="Human Resources">Human Resources</option>
-                <option value="MD">MD</option>
-                <option value="Sales">Sales</option>
-            </select>
-            <label for="phoneNumber">Phone Number</label>
-            <input id="phoneNumber" type="tel"  required />
-            <label for="skypeId">Skype ID</label>
-            <input id="skypeId" type="text" />
-            <div class="employeeFormButton">
-                <button class="submit" type="submit" >Submit</button>
-                <button class="close" type="button" onclick="closeEmployeeForm();">
-                    Close
-                </button>
-            </div>
-        </form>
-    </div> -->
-    <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
     <div class="container-fluid">
       <div style="display: inline-flex">
         <a class="navbar-brand" href="https://saketa.com/">
-          <img src="../Images/saketa_logo.png" alt="logo" width="250" />
+          <img
+            class="logo"
+            src="../Images/saketa_logo.png"
+            alt="logo"
+            width="250"
+          />
         </a>
       </div>
       <div class="logoText" style="display: inline-flex">
@@ -184,89 +170,324 @@
     <div class="container-fluid mt-4">
       <div class="row g-0">
         <div class="col-md-3 leftSideBar" style="cursor: pointer">
-             <!--"cursor: context-menu;"  -->
-        <div class="departments"  >
-          <h6 class="ms-4">Departments</h6>
-          <ul>
-            <li id="it" onclick="getEmployeeByFilter('IT')">IT(<span id="itNo">0</span>)</li>
-            <li id="hr" onclick="getEmployeeByFilter('Human Resources')">Human Resources(<span id="hrNo">0</span>)</li>
-            <li id="md" onclick="getEmployeeByFilter('MD')">MD(<span id="mdNo">0</span>)</li>
-            <li id="sales" onclick="getEmployeeByFilter('Sales')">Sales(<span id="salesNo">0</span>)</li>
-          </ul>
+          <div class="departments">
+            <h6 class="ms-4">Departments</h6>
+            <ul>
+              <li id="it" onclick="getEmployeeByFilter('IT')">
+                IT(<span id="itNo">0</span>)
+              </li>
+              <li id="hr" onclick="getEmployeeByFilter('Human Resources')">
+                Human Resources(<span id="hrNo">0</span>)
+              </li>
+              <li id="md" onclick="getEmployeeByFilter('MD')">
+                MD(<span id="mdNo">0</span>)
+              </li>
+              <li id="sales" onclick="getEmployeeByFilter('Sales')">
+                Sales(<span id="salesNo">0</span>)
+              </li>
+            </ul>
+          </div>
+          <div class="offices">
+            <h6 class="ms-4">Offices</h6>
+            <ul>
+              <li id="seattle" onclick="getEmployeeByFilter('Seattle')">
+                Seattle(<span id="seattleOffice">0</span>)
+              </li>
+              <li id="india" onclick="getEmployeeByFilter('India')">
+                India(<span id="indiaOffice">0</span>)
+              </li>
+            </ul>
+          </div>
+          <div class="jobTitles">
+            <h6 class="ms-4">Job Titles</h6>
+            <ul>
+              <li
+                id="sph"
+                onclick="getEmployeeByFilter('SharePoint Practice Head')"
+              >
+                SharePoint Practice Head(<span id="sphNo">0</span>)
+              </li>
+              <li
+                id="ndl"
+                onclick="getEmployeeByFilter('.Net Development Lead')"
+              >
+                .Net Development Lead(<span id="ndlNo">0</span>)
+              </li>
+              <li id="re" onclick="getEmployeeByFilter('Recruiting Expert')">
+                Recruiting Expert(<span id="reNo">0</span>)
+              </li>
+              <a
+                id="aViewMore"
+                style="color: rgba(14, 180, 252, 255)"
+                onmouseover="this.style.textDecoration = 'underline'"
+                onmouseout="this.style.textDecoration = 'none'"
+                onclick="viewMore()"
+                ><b>View more</b></a
+              >
+              <div id="viewMore" style="display: none">
+                <li id="bi" onclick="getEmployeeByFilter('BI Developer')">
+                  BI Developer(<span id="biNo">0</span>)
+                </li>
+                <li id="ba" onclick="getEmployeeByFilter('Business Analyst')">
+                  Business Analyst(<span id="baNo">0</span>)
+                </li>
+                <a
+                  style="color: rgba(14, 180, 252, 255)"
+                  onmouseover="this.style.textDecoration = 'underline'"
+                  onmouseout="this.style.textDecoration = 'none'"
+                  onclick="viewLess()"
+                  ><b>View less</b></a
+                >
+              </div>
+            </ul>
+          </div>
         </div>
-        <div class="offices">
-          <h6 class="ms-4">Offices</h6>
-          <ul>
-            <li id="seattle" onclick="getEmployeeByFilter('Seattle')">Seattle(<span id="seattleOffice">0</span>)</li>
-            <li id="india" onclick="getEmployeeByFilter('India')">India(<span id="indiaOffice">0</span>)</li>
-          </ul>
-        </div>
-        <div class="jobTitles">
-          <h6 class="ms-4">Job Titles</h6>
-          <ul>
-            <li id="sph" onclick="getEmployeeByFilter('SharePoint Practice Head')">
-              SharePoint Practice Head(<span id="sphNo">0</span>)
-            </li>
-            <li id="ndl" onclick="getEmployeeByFilter('.Net Development Lead')">.Net Development Lead(<span id="ndlNo">0</span>)</li>
-            <li id="re" onclick="getEmployeeByFilter('Recruiting Expert')">Recruiting Expert(<span id="reNo">0</span>)</li>
-            <a id="aViewMore" style="color: rgba(14, 180, 252, 255);" onmouseover="this.style.textDecoration = 'underline'" onmouseout="this.style.textDecoration = 'none'" onclick="viewMore()"><b>View more</b></a>
-            <div id="viewMore" style="display:none">
-            <li id="bi" onclick="getEmployeeByFilter('BI Developer')">BI Developer(<span id="biNo">0</span>)</li>
-            <li id="ba" onclick="getEmployeeByFilter('Business Analyst')">Business Analyst(<span id="baNo">0</span>)</li>
-            <a style="color: rgba(14, 180, 252, 255);" onmouseover="this.style.textDecoration = 'underline'" onmouseout="this.style.textDecoration = 'none'" onclick="viewLess()"><b>View less</b></a>
-            </div>
-          </ul>
-        </div>
-        </div>
-        
-    <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+
+        <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
         <div class="col-md-9 rightSideBar">
-            <div class="alphabetSearchButton" id="alphabetSearchButtons">
-            <button type="button" class="btn rounded-0 btn-sm" onclick="getHtmlForEmployeeList()"><ion-icon name="person"></ion-icon></button>
-            <button type="button" class="btn rounded-0 btn-sm" id="A" onclick="getEmployeeByAttr('A')">A</button>
-            <button type="button" class="btn rounded-0 btn-sm" id="B" onclick="getEmployeeByAttr('B')">B</button>
-            <button type="button" class="btn rounded-0 btn-sm" id="C" onclick="getEmployeeByAttr('C')">C</button>
-            <button type="button" class="btn rounded-0 btn-sm" id="D" onclick="getEmployeeByAttr('D')">D</button>
-            <button type="button" class="btn rounded-0 btn-sm" id="E" onclick="getEmployeeByAttr('E')">E</button>
-            <button type="button" class="btn rounded-0 btn-sm" id="F" onclick="getEmployeeByAttr('F')">F</button>
-            <button type="button" class="btn rounded-0 btn-sm" id="G" onclick="getEmployeeByAttr('G')">G</button>
-            <button type="button" class="btn rounded-0 btn-sm" id="H" onclick="getEmployeeByAttr('H')">H</button>
-            <button type="button" class="btn rounded-0 btn-sm" id="I" onclick="getEmployeeByAttr('I')">I</button>
-            <button type="button" class="btn rounded-0 btn-sm" id="J" onclick="getEmployeeByAttr('J')">J</button>
-            <button type="button" class="btn rounded-0 btn-sm" id="K" onclick="getEmployeeByAttr('K')">K</button>
-            <button type="button" class="btn rounded-0 btn-sm" id="L" onclick="getEmployeeByAttr('L')">L</button>
-            <button type="button" class="btn rounded-0 btn-sm" id="M" onclick="getEmployeeByAttr('M')">M</button>
-            <button type="button" class="btn rounded-0 btn-sm" id="N" onclick="getEmployeeByAttr('N')">N</button>
-            <button type="button" class="btn rounded-0 btn-sm" id="O" onclick="getEmployeeByAttr('O')">O</button>
-            <button type="button" class="btn rounded-0 btn-sm" id="P" onclick="getEmployeeByAttr('P')">P</button>
-            <button type="button" class="btn rounded-0 btn-sm" id="Q" onclick="getEmployeeByAttr('Q')">Q</button>
-            <button type="button" class="btn rounded-0 btn-sm" id="R" onclick="getEmployeeByAttr('R')">R</button>
-            <button type="button" class="btn rounded-0 btn-sm" id="S" onclick="getEmployeeByAttr('S')">S</button>
-            <button type="button" class="btn rounded-0 btn-sm" id="T" onclick="getEmployeeByAttr('T')">T</button>
-            <button type="button" class="btn rounded-0 btn-sm" id="U" onclick="getEmployeeByAttr('U')">U</button>
-            <button type="button" class="btn rounded-0 btn-sm" id="V" onclick="getEmployeeByAttr('V')">V</button>
-            <button type="button" class="btn rounded-0 btn-sm" id="W" onclick="getEmployeeByAttr('W')">W</button>
-            <button type="button" class="btn rounded-0 btn-sm" id="X" onclick="getEmployeeByAttr('X')">X</button>
-            <button type="button" class="btn rounded-0 btn-sm" id="Y" onclick="getEmployeeByAttr('Y')">Y</button>
-            <button type="button" class="btn rounded-0 btn-sm" id="Z" onclick="getEmployeeByAttr('Z')">Z</button>
-        </div>
-    <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-    <div class="searchFilterBySection mt-3 row"> <!--163 164 168 -->
-        <div class="col-md-auto">
-            <h6>Search</h6> 
-            <input class="form-control rounded-0 ms-2" id="search" type="text" placeholder="&#x1F50D; " oninput="getEmployeeByDetail(this.value)">
-        <!-- </div> -->
-        <!-- <div class="col">     -->
-            <button type="button" onclick="clearsearch()" class="btn rounded-0 btn-sm clearButton ms-2" >Clear</button>
-            <!-- style="margin-left:1rem; height:2.2rem; display:inline-flexbox" -->
-        </div>  
-        <div class="col-md-auto">
-            <label for="filter"><h6>Filter by</h6></label>
-            <select name="filter" id="filter" style="height: 35px;"> 
+          <div class="alphabetSearchButton" id="alphabetSearchButtons">
+            <button
+              type="button"
+              class="btn rounded-0 btn-sm"
+              onclick="getHtmlForEmployeeList()"
+            >
+              <ion-icon name="person"></ion-icon>
+            </button>
+            <button
+              type="button"
+              class="btn rounded-0 btn-sm"
+              id="A"
+              onclick="getEmployeeByAttr('A')"
+            >
+              A
+            </button>
+            <button
+              type="button"
+              class="btn rounded-0 btn-sm"
+              id="B"
+              onclick="getEmployeeByAttr('B')"
+            >
+              B
+            </button>
+            <button
+              type="button"
+              class="btn rounded-0 btn-sm"
+              id="C"
+              onclick="getEmployeeByAttr('C')"
+            >
+              C
+            </button>
+            <button
+              type="button"
+              class="btn rounded-0 btn-sm"
+              id="D"
+              onclick="getEmployeeByAttr('D')"
+            >
+              D
+            </button>
+            <button
+              type="button"
+              class="btn rounded-0 btn-sm"
+              id="E"
+              onclick="getEmployeeByAttr('E')"
+            >
+              E
+            </button>
+            <button
+              type="button"
+              class="btn rounded-0 btn-sm"
+              id="F"
+              onclick="getEmployeeByAttr('F')"
+            >
+              F
+            </button>
+            <button
+              type="button"
+              class="btn rounded-0 btn-sm"
+              id="G"
+              onclick="getEmployeeByAttr('G')"
+            >
+              G
+            </button>
+            <button
+              type="button"
+              class="btn rounded-0 btn-sm"
+              id="H"
+              onclick="getEmployeeByAttr('H')"
+            >
+              H
+            </button>
+            <button
+              type="button"
+              class="btn rounded-0 btn-sm"
+              id="I"
+              onclick="getEmployeeByAttr('I')"
+            >
+              I
+            </button>
+            <button
+              type="button"
+              class="btn rounded-0 btn-sm"
+              id="J"
+              onclick="getEmployeeByAttr('J')"
+            >
+              J
+            </button>
+            <button
+              type="button"
+              class="btn rounded-0 btn-sm"
+              id="K"
+              onclick="getEmployeeByAttr('K')"
+            >
+              K
+            </button>
+            <button
+              type="button"
+              class="btn rounded-0 btn-sm"
+              id="L"
+              onclick="getEmployeeByAttr('L')"
+            >
+              L
+            </button>
+            <button
+              type="button"
+              class="btn rounded-0 btn-sm"
+              id="M"
+              onclick="getEmployeeByAttr('M')"
+            >
+              M
+            </button>
+            <button
+              type="button"
+              class="btn rounded-0 btn-sm"
+              id="N"
+              onclick="getEmployeeByAttr('N')"
+            >
+              N
+            </button>
+            <button
+              type="button"
+              class="btn rounded-0 btn-sm"
+              id="O"
+              onclick="getEmployeeByAttr('O')"
+            >
+              O
+            </button>
+            <button
+              type="button"
+              class="btn rounded-0 btn-sm"
+              id="P"
+              onclick="getEmployeeByAttr('P')"
+            >
+              P
+            </button>
+            <button
+              type="button"
+              class="btn rounded-0 btn-sm"
+              id="Q"
+              onclick="getEmployeeByAttr('Q')"
+            >
+              Q
+            </button>
+            <button
+              type="button"
+              class="btn rounded-0 btn-sm"
+              id="R"
+              onclick="getEmployeeByAttr('R')"
+            >
+              R
+            </button>
+            <button
+              type="button"
+              class="btn rounded-0 btn-sm"
+              id="S"
+              onclick="getEmployeeByAttr('S')"
+            >
+              S
+            </button>
+            <button
+              type="button"
+              class="btn rounded-0 btn-sm"
+              id="T"
+              onclick="getEmployeeByAttr('T')"
+            >
+              T
+            </button>
+            <button
+              type="button"
+              class="btn rounded-0 btn-sm"
+              id="U"
+              onclick="getEmployeeByAttr('U')"
+            >
+              U
+            </button>
+            <button
+              type="button"
+              class="btn rounded-0 btn-sm"
+              id="V"
+              onclick="getEmployeeByAttr('V')"
+            >
+              V
+            </button>
+            <button
+              type="button"
+              class="btn rounded-0 btn-sm"
+              id="W"
+              onclick="getEmployeeByAttr('W')"
+            >
+              W
+            </button>
+            <button
+              type="button"
+              class="btn rounded-0 btn-sm"
+              id="X"
+              onclick="getEmployeeByAttr('X')"
+            >
+              X
+            </button>
+            <button
+              type="button"
+              class="btn rounded-0 btn-sm"
+              id="Y"
+              onclick="getEmployeeByAttr('Y')"
+            >
+              Y
+            </button>
+            <button
+              type="button"
+              class="btn rounded-0 btn-sm"
+              id="Z"
+              onclick="getEmployeeByAttr('Z')"
+            >
+              Z
+            </button>
+          </div>
+          <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+          <div class="searchFilterBySection mt-3 row">
+            <div class="col-md-auto pt-2">
+              <h6>Search</h6>
+              <input
+                class="form-control rounded-0 ms-2"
+                id="search"
+                type="text"
+                placeholder="&#x1F50D; Keyword"
+                oninput="getEmployeeByDetail(this.value)"
+              />
+              <button
+                type="button"
+                onclick="clearsearch()"
+                class="btn rounded-0 btn-sm clearButton ms-2"
+              >
+                Clear
+              </button>
+            </div>
+            <div class="col-md-auto pt-2">
+              <label for="filter"><h6>Filter by</h6></label>
+              <select name="filter" id="filter" style="height: 35px">
                 <option value="firstName">First Name</option>
                 <option value="lastName">Last Name</option>
                 <option value="preferredName" selected="selected">
-                    Preferred Name
+                  Preferred Name
                 </option>
                 <option value="email">Email</option>
                 <option value="jobTitle">Job Title</option>
@@ -274,60 +495,41 @@
                 <option value="department">Department</option>
                 <option value="phoneNumber">Phone Number</option>
                 <option value="skypeId">Skype ID</option>
-            </select>
-        </div>
-        <!-- </div>  -->
-        <!-- <div class="col-md-auto"> -->
-    <!-- <button type="button" class="btn btn-sm addEmployee pt-2" onclick="openEmployeeForm()" 
-    style="background-color: #00b1fc; color: white; margin-left:50px;"><h6>Add Employee</h6></button> -->
-    <div class="container col-md-auto">
-        <!-- Button trigger modal -->
-        <button
-          type="button"
-          class="btn btn-primary addEmployee"
-          data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
-        >
-         Add Employee
-        </button>
-      </div>
-        
-<!-- ////////////////////////////////////margin-left:1rem; height:2rem; margin-left: 150px;margin-top: -0.3rem; display:inline-flexbox;///////////////////////////////////////////// -->
-    </div>
-    
-    <!-- /////////////check-1/////////////// -->
-<!-- Button trigger modal -->
-<!-- <div class="container">
-    <button
-      type="button"
-      class="btn btn-primary"
-      data-bs-toggle="modal"
-      data-bs-target="#exampleModal"
-    >
-     Add Employee
-    </button>
-  </div> -->
-<!-- //////////check end-1//////////// -->
-    <div>
-    <p><h6>Note: </h6> Please use the advanced filter options to refine your results.</p>
-    </div>
-        <div class="border mt-2 employeeListSpace container">  
+              </select>
+            </div>
+            <div class="container col-md-auto pt-2">
+              <button
+                type="button"
+                class="btn btn-primary addEmployee"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                Add Employee
+              </button>
+            </div>
+          </div>
+          <div class="pt-1">
+            <p>
+              <b>Note:</b> Please use the advanced filter options to refine your
+              results.
+            </p>
+          </div>
+          <div class="border mt-4 employeeListSpace container">
             <div id="employeeListSpace" class="row row-cols-3 gy-2 gx-2"></div>
+          </div>
         </div>
-
+      </div>
     </div>
-    </div>
-    </div>
-<!-- For Icons -->
-<script
-    type="module"
-    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js">
-</script>
-<!-- For Add new employee pop up -->
-<script
-src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
-integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
-crossorigin="anonymous"
-></script>
+    <!-- For Icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <!-- For Add new employee pop up -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+      integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

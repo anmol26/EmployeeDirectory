@@ -137,4 +137,14 @@ body .rightSideBar .employee-details .icons ion-icon {
 .formPopup1 .employeeFormButton .close {
   font-weight: bolder;
 }
+
+@media screen and (max-width: 500px) {
+  .logo {
+    padding-left: 0;
+    margin-left: 0;
+  }
+  .employee {
+    width: 80%;
+  }
+}
 /*# sourceMappingURL=main.css.map */

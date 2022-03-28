@@ -16,23 +16,14 @@ let employees = [
 let displayEmployees = employees;
 
 
-// function openEmployeeForm() {
-//     let formPopup = document.getElementById("myForm");
-//     formPopup.style.display = "flex";
-
-//   }
 function closeEmployeeForm(){
     document.getElementById("myForm").style.display = "none";
-    //document.getElementById("myForm").style.blur = "none";
-    //document.getElementById("exampleModal").style.display = "none";
-    //document.getElementById("myForm").style.zIndex = -999;
-
 }
+
 function clearsearch(){
     document.getElementById("search").value="";
     getHtmlForEmployeeList();   
 }
-
 
 function updateCount(){
     let dCount=0;
@@ -144,7 +135,6 @@ function addEmployee(element){
             phoneNumber:document.getElementById('phoneNumber').value,
             skypeId:document.getElementById('skypeId').value,
         });
-   // document.body.blur=0;
    const closeButton = element.querySelector(".close");
    closeButton.click();
     updateCount();
@@ -177,7 +167,6 @@ function getEmployeeByAttr(x){
         }
     }
     document.getElementById("employeeListSpace").innerHTML=finalHtml;
-    // document.getElementById(x).style.background= "red";
 
 }
 
