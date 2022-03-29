@@ -26,6 +26,7 @@
       <form
         class="newEmployee needs-validation was-validated"
         onsubmit="addEmployee(this); return false;"
+        id="newEmployee"
       >
         <!-- was-validated -->
         <div
@@ -57,20 +58,23 @@
                     id="firstName"
                     class="form-control"
                     type="text"
+                    pattern="^[a-zA-Z]+$"
+                    title="Please enter FirstName."
                     required
                   />
-                  <div class="invalid-feedback">Please enter a Firstname.</div>
+                  <!-- <div class="invalid-feedback">Please enter a Firstname.</div> -->
                 </div>
-                <!-- <div class="valid-feedback">Looks good!</div> -->
                 <div>
                   <label for="lastName" class="col-form-label">Last Name</label>
                   <input
                     id="lastName"
                     class="form-control"
                     type="text"
+                    pattern="^[a-zA-Z]+$"
+                    title="Please enter Lastname."
                     required
                   />
-                  <div class="invalid-feedback">Please enter a Lastname.</div>
+                  <!-- <div class="invalid-feedback">Please enter a Lastname.</div> -->
                 </div>
                 <div>
                   <label for="preferredName" class="col-form-label"
@@ -80,9 +84,11 @@
                     id="preferredName"
                     class="form-control"
                     type="text"
+                    pattern="^[a-z A-Z]+$"
+                    title="Please enter a PrefferdName"
                     required
                   />
-                  <div class="invalid-feedback">Please enter a Lastname.</div>
+                  <!-- <div class="invalid-feedback">Please enter a Lastname.</div> -->
                 </div>
                 <div>
                   <label for="email" class="col-form-label">Email</label>
@@ -90,9 +96,10 @@
                     id="email"
                     class="form-control"
                     type="email"
+                    title="please fill email."
                     required
                   />
-                  <div class="invalid-feedback">Please fill email.</div>
+                  <!-- <div class="invalid-feedback">Please fill email.</div> -->
                 </div>
                 <div>
                   <label
@@ -101,7 +108,13 @@
                     aria-label="select example"
                     >Job Title</label
                   >
-                  <select name="jobTitle" id="jobTitle" required>
+                  <select
+                    name="jobTitle"
+                    class="form-control"
+                    id="jobTitle"
+                    title="Please select a JobTitle."
+                    required
+                  >
                     <option selected disabled value="">Select JobTitle</option>
                     <option value="SharePoint Practice Head">
                       SharePoint Practice Head
@@ -113,22 +126,34 @@
                     <option value="BI Developer">BI Developer</option>
                     <option value="Business Analyst">Business Analyst</option>
                   </select>
-                  <div class="invalid-feedback">Please select jobTitle</div>
+                  <!-- <div class="invalid-feedback">Please select jobTitle</div> -->
                 </div>
                 <div>
                   <label for="office" class="col-form-label">Office</label>
-                  <select name="office" id="office" required>
+                  <select
+                    name="office"
+                    id="office"
+                    class="form-control"
+                    title="Please select a office."
+                    required
+                  >
                     <option selected disabled value="">Select Office</option>
                     <option value="India">India</option>
                     <option value="Seattle">Seattle</option>
                   </select>
-                  <div class="invalid-feedback">Please select Office</div>
+                  <!-- <div class="invalid-feedback">Please select Office</div> -->
                 </div>
                 <div>
                   <label for="department" class="col-form-label"
                     >Department</label
                   >
-                  <select name="department" id="department" required>
+                  <select
+                    name="department"
+                    id="department"
+                    class="form-control"
+                    title="Please select a department."
+                    required
+                  >
                     <option selected disabled value="">
                       Select Department
                     </option>
@@ -137,6 +162,7 @@
                     <option value="MD">MD</option>
                     <option value="Sales">Sales</option>
                   </select>
+                  <!-- <div class="invalid-feedback">Please select Department.</div> -->
                 </div>
                 <div>
                   <label for="phoneNumber" class="col-form-label"
@@ -146,16 +172,21 @@
                     id="phoneNumber"
                     class="form-control"
                     type="tel"
+                    pattern="[6-9]{1}[0-9]{9}"
+                    title="Please enter a valid mobile Number"
                     required
                   />
-                  <div class="invalid-feedback">
-                    Please enter a MobileNumber.
-                  </div>
                 </div>
                 <div>
                   <label for="skypeId" class="col-form-label">Skype ID</label>
-                  <input id="skypeId" class="form-control" type="text" />
+                  <input
+                    id="skypeId"
+                    type="text"
+                    style="border-radius: 0.3rem; height: 2.3rem"
+                  />
                 </div>
+                <!-- <label for="skypeId" class="col-form-label">Skype ID</label>
+                  <input id="skypeId" class="form-control" type="text" /> -->
               </div>
               <div class="modal-footer">
                 <button
@@ -165,9 +196,7 @@
                 >
                   Close
                 </button>
-                <button class="submit btn btn-primary" type="submit">
-                  Submit
-                </button>
+                <button class="btn btn-primary" type="submit">Submit</button>
               </div>
             </div>
           </div>
@@ -256,8 +285,6 @@
               <a
                 id="aViewMore"
                 style="color: rgba(14, 180, 252, 255)"
-                onmouseover="this.style.textDecoration = 'underline'"
-                onmouseout="this.style.textDecoration = 'none'"
                 onclick="viewMore()"
                 ><b>View more</b></a
               >
@@ -268,11 +295,7 @@
                 <li id="ba" onclick="getEmployeeByFilter('Business Analyst')">
                   Business Analyst(<span id="baNo">0</span>)
                 </li>
-                <a
-                  style="color: rgba(14, 180, 252, 255)"
-                  onmouseover="this.style.textDecoration = 'underline'"
-                  onmouseout="this.style.textDecoration = 'none'"
-                  onclick="viewLess()"
+                <a style="color: rgba(14, 180, 252, 255)" onclick="viewLess()"
                   ><b>View less</b></a
                 >
               </div>
@@ -302,7 +325,7 @@
             <div class="col-md-auto pt-2">
               <h6>Search</h6>
               <input
-                class="form-control rounded-0 ms-2"
+                class="form-control ms-2"
                 id="search"
                 type="text"
                 placeholder="&#x1F50D; Keyword"
@@ -311,14 +334,19 @@
               <button
                 type="button"
                 onclick="clearsearch()"
-                class="btn rounded-0 btn-sm clearButton ms-2"
+                class="btn clearButton ms-2"
               >
                 Clear
               </button>
             </div>
             <div class="col-md-auto pt-2">
               <label for="filter"><h6>Filter by</h6></label>
-              <select name="filter" id="filter" style="height: 35px">
+              <select
+                class="ms-2"
+                name="filter"
+                id="filter"
+                style="height: 35px; border-radius: 0.2rem"
+              >
                 <option value="firstName">First Name</option>
                 <option value="lastName">Last Name</option>
                 <option value="preferredName" selected="selected">
@@ -335,7 +363,8 @@
             <div class="container col-md-auto pt-2">
               <button
                 type="button"
-                class="btn btn-primary addEmployee"
+                class="btn btn-primary"
+                style="margin-top: -0.2rem"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
               >

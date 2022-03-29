@@ -11,6 +11,42 @@ let employees = [
 		skypeId: 'anmol1234',
 		photo: 'user.jpg',
 	},
+    {
+		firstName: 'Siva',
+		lastName: 'Siddam',
+		preferredName: 'Siva Siddam',
+		email: 'siva.s@technovert.com',
+		jobTitle: 'SharePoint Practice Head',
+		office: 'Seattle',
+		department: 'MD',
+		phoneNumber: '6789453240',
+		skypeId: 'siva1234',
+		photo: 'user.jpg',
+	},
+    {
+		firstName: 'Balaji',
+		lastName: 'Kummari',
+		preferredName: 'Balaji Kummari',
+		email: 'balaji.k@technovert.com',
+		jobTitle: 'Business Analyst',
+		office: 'Seattle',
+		department: 'Sales',
+		phoneNumber: '8749453240',
+		skypeId: 'balaji1234',
+		photo: 'user.jpg',
+	},
+    {
+		firstName: 'Koni',
+		lastName: 'Aruva',
+		preferredName: 'Koni Reddy Aruva',
+		email: 'koni.a@technovert.com',
+		jobTitle: 'BI Developer',
+		office: 'India',
+		department: 'IT',
+		phoneNumber: '7849453240',
+		skypeId: 'koni1234',
+		photo: 'user.jpg',
+	},
 ];
 
 let displayEmployees = employees;
@@ -135,8 +171,9 @@ function addEmployee(element){
             phoneNumber:document.getElementById('phoneNumber').value,
             skypeId:document.getElementById('skypeId').value,
         });
-   const closeButton = element.querySelector(".close");
-   closeButton.click();
+            
+        const closeButton = element.querySelector(".close");
+        closeButton.click();
     updateCount();
     getHtmlForEmployeeList();
 }
@@ -307,9 +344,6 @@ function getEmployeeByFilter(y){
     document.getElementById("employeeListSpace").innerHTML=finalHtml;
 }
 
-let alpha=[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z]
-/////////////////////////////////////////////////////////////////////
-
 function abc(){
     const alpha = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
     var finalHtml='';
@@ -327,24 +361,60 @@ function abc(){
     document.getElementById("buttonListSpace").innerHTML=finalHtml;
    
 }
-///////////////////////////////////////////////////////////////////////
 
+// (function () {
+//     'use strict'
+//     // Fetch all the forms we want to apply custom Bootstrap validation styles to
+//     var forms = document.querySelectorAll('.needs-validation')
+//     // Loop over them and prevent submission
+//     Array.prototype.slice.call(forms)
+//       .forEach(function (form) {
+//         form.addEventListener('submit', function (event) {
+//           if (!form.checkValidity()) {
+//             event.preventDefault()
+//             event.stopPropagation()
+//           }
+//           form.classList.add('was-validated')
+//         }, false)
+//       })
+//   })()
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
-    'use strict'
-  
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.querySelectorAll('.needs-validation')
-  
-    // Loop over them and prevent submission
-    Array.prototype.slice.call(forms)
-      .forEach(function (form) {
+    'use strict';
+    window.addEventListener('load', function () {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function (form) {
         form.addEventListener('submit', function (event) {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+            var invalidOptions = document.querySelectorAll(".form-control:invalid");
+
+            invalidOptions.forEach(function (element) {
+              element.parentNode.childNodes.forEach(function (node) {
+                if (node.className == 'valid-feedback') {
+                  node.classList.add('d-none');
+                }
+              });
+            });
+
+            var validOptions = document.querySelectorAll(".form-control:valid");
+            invalidOptions.forEach(function (element) {
+              element.parentNode.childNodes.forEach(function (node) {
+                if (node.className == 'invalid-feedback') {
+                  node.classList.remove('d-none');
+
+                }
+
+              });
+            });
+
           }
-  
-          form.classList.add('was-validated')
-        }, false)
-      })
-  })()
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
