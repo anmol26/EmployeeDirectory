@@ -309,18 +309,22 @@ function getEmployeeByFilter(y){
 
 let alpha=[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z]
 /////////////////////////////////////////////////////////////////////
+
 function abc(){
-    let alpha=[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z];
-    for(let alphabet in alpha){
+    const alpha = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+    var finalHtml='';
+    for(let a in alpha){
         var x= ` <button
         type="button"
-        class="btn rounded-0 btn-sm"
-        id=${alphabet}
-        onclick="getEmployeeByAttr(${alphabet})"
+        class="btn rounded-0 btn-sm mt-1"
+        id=${alpha[a]}
+        onclick="getEmployeeByAttr('${alpha[a]}')"
       >
-      ${alphabet}
+      ${alpha[a]}
       </button>`;
+      finalHtml += x;
     }
+    document.getElementById("buttonListSpace").innerHTML=finalHtml;
    
 }
 ///////////////////////////////////////////////////////////////////////

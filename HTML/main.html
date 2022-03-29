@@ -21,7 +21,7 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body onload="getHtmlForEmployeeList();">
+  <body onload="getHtmlForEmployeeList(); abc();">
     <div class="formPopup1" id="myForm">
       <form
         class="newEmployee needs-validation was-validated"
@@ -158,10 +158,16 @@
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="close" data-bs-dismiss="modal">
+                <button
+                  type="button"
+                  class="close btn btn-danger"
+                  data-bs-dismiss="modal"
+                >
                   Close
                 </button>
-                <button class="submit" type="submit">Submit</button>
+                <button class="submit btn btn-primary" type="submit">
+                  Submit
+                </button>
               </div>
             </div>
           </div>
@@ -279,220 +285,17 @@
           <div class="alphabetSearchButton" id="alphabetSearchButtons">
             <button
               type="button"
-              class="btn rounded-0 btn-sm"
+              class="btn rounded-0 btn-sm mt-1"
               onclick="getHtmlForEmployeeList()"
+              style="display: inline-block"
             >
               <ion-icon name="person"></ion-icon>
             </button>
-            <button
-              type="button"
-              class="btn rounded-0 btn-sm"
-              id="A"
-              onclick="getEmployeeByAttr('A')"
-            >
-              A
-            </button>
-            <button
-              type="button"
-              class="btn rounded-0 btn-sm"
-              id="B"
-              onclick="getEmployeeByAttr('B')"
-            >
-              B
-            </button>
-            <button
-              type="button"
-              class="btn rounded-0 btn-sm"
-              id="C"
-              onclick="getEmployeeByAttr('C')"
-            >
-              C
-            </button>
-            <button
-              type="button"
-              class="btn rounded-0 btn-sm"
-              id="D"
-              onclick="getEmployeeByAttr('D')"
-            >
-              D
-            </button>
-            <button
-              type="button"
-              class="btn rounded-0 btn-sm"
-              id="E"
-              onclick="getEmployeeByAttr('E')"
-            >
-              E
-            </button>
-            <button
-              type="button"
-              class="btn rounded-0 btn-sm"
-              id="F"
-              onclick="getEmployeeByAttr('F')"
-            >
-              F
-            </button>
-            <button
-              type="button"
-              class="btn rounded-0 btn-sm"
-              id="G"
-              onclick="getEmployeeByAttr('G')"
-            >
-              G
-            </button>
-            <button
-              type="button"
-              class="btn rounded-0 btn-sm"
-              id="H"
-              onclick="getEmployeeByAttr('H')"
-            >
-              H
-            </button>
-            <button
-              type="button"
-              class="btn rounded-0 btn-sm"
-              id="I"
-              onclick="getEmployeeByAttr('I')"
-            >
-              I
-            </button>
-            <button
-              type="button"
-              class="btn rounded-0 btn-sm"
-              id="J"
-              onclick="getEmployeeByAttr('J')"
-            >
-              J
-            </button>
-            <button
-              type="button"
-              class="btn rounded-0 btn-sm"
-              id="K"
-              onclick="getEmployeeByAttr('K')"
-            >
-              K
-            </button>
-            <button
-              type="button"
-              class="btn rounded-0 btn-sm"
-              id="L"
-              onclick="getEmployeeByAttr('L')"
-            >
-              L
-            </button>
-            <button
-              type="button"
-              class="btn rounded-0 btn-sm"
-              id="M"
-              onclick="getEmployeeByAttr('M')"
-            >
-              M
-            </button>
-            <button
-              type="button"
-              class="btn rounded-0 btn-sm"
-              id="N"
-              onclick="getEmployeeByAttr('N')"
-            >
-              N
-            </button>
-            <button
-              type="button"
-              class="btn rounded-0 btn-sm"
-              style="margin-top: 0.1rem"
-              id="O"
-              onclick="getEmployeeByAttr('O')"
-            >
-              O
-            </button>
-            <button
-              type="button"
-              class="btn rounded-0 btn-sm"
-              id="P"
-              onclick="getEmployeeByAttr('P')"
-            >
-              P
-            </button>
-            <button
-              type="button"
-              class="btn rounded-0 btn-sm"
-              id="Q"
-              onclick="getEmployeeByAttr('Q')"
-            >
-              Q
-            </button>
-            <button
-              type="button"
-              class="btn rounded-0 btn-sm"
-              id="R"
-              onclick="getEmployeeByAttr('R')"
-            >
-              R
-            </button>
-            <button
-              type="button"
-              class="btn rounded-0 btn-sm"
-              id="S"
-              onclick="getEmployeeByAttr('S')"
-            >
-              S
-            </button>
-            <button
-              type="button"
-              class="btn rounded-0 btn-sm"
-              id="T"
-              onclick="getEmployeeByAttr('T')"
-            >
-              T
-            </button>
-            <button
-              type="button"
-              class="btn rounded-0 btn-sm"
-              id="U"
-              onclick="getEmployeeByAttr('U')"
-            >
-              U
-            </button>
-            <button
-              type="button"
-              class="btn rounded-0 btn-sm"
-              id="V"
-              onclick="getEmployeeByAttr('V')"
-            >
-              V
-            </button>
-            <button
-              type="button"
-              class="btn rounded-0 btn-sm"
-              id="W"
-              onclick="getEmployeeByAttr('W')"
-            >
-              W
-            </button>
-            <button
-              type="button"
-              class="btn rounded-0 btn-sm"
-              id="X"
-              onclick="getEmployeeByAttr('X')"
-            >
-              X
-            </button>
-            <button
-              type="button"
-              class="btn rounded-0 btn-sm"
-              id="Y"
-              onclick="getEmployeeByAttr('Y')"
-            >
-              Y
-            </button>
-            <button
-              type="button"
-              class="btn rounded-0 btn-sm"
-              id="Z"
-              onclick="getEmployeeByAttr('Z')"
-            >
-              Z
-            </button>
+            <div
+              class="mt-1"
+              id="buttonListSpace"
+              style="display: inline-block"
+            ></div>
           </div>
           <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
           <div class="searchFilterBySection mt-3 row">

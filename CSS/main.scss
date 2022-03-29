@@ -114,23 +114,9 @@ body {
     width: 100%;
     margin-bottom: 1%;
     border: 1px solid black;
-    //height: 20px;
-  }
-  .employeeFormButton {
-    .submit {
-      font-weight: bolder;
-    }
-    .close {
-      font-weight: bolder;
-    }
   }
 }
-
 @media screen and (max-width: 500px) {
-  //   .logo {
-  //     padding-left: 0;
-  //     margin-left: 0;
-  //   }
   .employee {
     width: 70%;
   }

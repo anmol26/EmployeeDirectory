@@ -125,14 +125,6 @@ body .rightSideBar .employee-details .icons ion-icon {
   border: 1px solid black;
 }
 
-.formPopup1 .employeeFormButton .submit {
-  font-weight: bolder;
-}
-
-.formPopup1 .employeeFormButton .close {
-  font-weight: bolder;
-}
-
 @media screen and (max-width: 500px) {
   .employee {
     width: 70%;
