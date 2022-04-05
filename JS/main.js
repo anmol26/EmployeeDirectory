@@ -53,11 +53,11 @@ let displayEmployees = employees;
 
 
 function closeEmployeeForm(){
-    document.getElementById("myForm").style.display = "none";
+    $("#myForm").hide();
 }
 
 function clearsearch(){
-    document.getElementById("search").value="";
+    $("#search").val("");
     getHtmlForEmployeeList();   
 }
 
@@ -120,17 +120,17 @@ function updateCount(){
           baCount+= 1;  
         }
     }
-    document.getElementById("itNo").innerHTML= dCount;
-    document.getElementById("hrNo").innerHTML= hCount;
-    document.getElementById("mdNo").innerHTML= mCount;
-    document.getElementById("salesNo").innerHTML= sCount;
-    document.getElementById("seattleOffice").innerHTML= seattleCount;
-    document.getElementById("indiaOffice").innerHTML= indiaCount;
-    document.getElementById("sphNo").innerHTML= sphCount;
-    document.getElementById("ndlNo").innerHTML= ndlCount;
-    document.getElementById("reNo").innerHTML= reCount;
-    document.getElementById("biNo").innerHTML= biCount;
-    document.getElementById("baNo").innerHTML= baCount;
+    $("#itNo").html(dCount);
+    $("#hrNo").html(hCount);
+    $("#mdNo").html(mCount);
+    $("#salesNo").html(sCount);
+    $("#seattleOffice").html(seattleCount);
+    $("#indiaOffice").html(indiaCount);
+    $("#sphNo").html(sphCount);
+    $("#ndlNo").html(ndlCount);
+    $("#reNo").html(reCount);
+    $("#biNo").html(biCount);
+    $("#baNo").html(baCount);
 }
 
 function getHtmlForEmployeeList() {
@@ -155,25 +155,24 @@ function getHtmlForEmployeeList() {
 		</div>`;
 		finalHtml += employee;
     }
-    document.getElementById('employeeListSpace').innerHTML = finalHtml;
+    $("#employeeListSpace").html(finalHtml);
     updateCount();
 }
 
-function addEmployee(element){
+function addEmployee(){
     displayEmployees.push(
-        {   firstName: document.getElementById('firstName').value,
-            lastName: document.getElementById('lastName').value,
-            preferredName:document.getElementById('preferredName').value,
-            email:document.getElementById('email').value,
-            jobTitle:document.getElementById('jobTitle').value,
-            department: document.getElementById('department').value,
-            office:document.getElementById('office').value,
-            phoneNumber:document.getElementById('phoneNumber').value,
-            skypeId:document.getElementById('skypeId').value,
+        {   
+            firstName: $("#firstName").val(),
+            lastName: $("#lastName").val(),
+            preferredName: $("#preferredName").val(),
+            email: $("#email").val(),
+            jobTitle: $("#jobTitle").val(),
+            department: $("#department").val(),
+            office: $("#office").val(),
+            phoneNumber: $("#phoneNumber").val(),
+            skypeId: $("#skypeId").val(),
         });
-            
-        const closeButton = element.querySelector(".close");
-        closeButton.click();
+    $(".close").click();
     updateCount();
     getHtmlForEmployeeList();
 }
@@ -203,7 +202,7 @@ function getEmployeeByAttr(x){
 		finalHtml += employee;
         }
     }
-    document.getElementById("employeeListSpace").innerHTML=finalHtml;
+    $("#employeeListSpace").html(finalHtml);
 
 }
 
@@ -227,71 +226,63 @@ function getEmployeeByDetail(x){
 			</div>
 		</div>
 		</div>`;
-        if(document.getElementById("filter").value=='firstName')
+        if( $("#filter").val()=='firstName')
         {
         if(emp.firstName.includes(x))
         {
 		finalHtml += employee;
         }
         }
-    
-        else if(document.getElementById("filter").value=='lastName')
+        else if( $("#filter").val()=='lastName')
         {
         if(emp.lastName.includes(x))
         {
 		finalHtml += employee;
         }
         }
-
-        else if(document.getElementById("filter").value=='preferredName')
+        else if( $("#filter").val()=='preferredName')
         {
         if(emp.preferredName.includes(x))
         {
 		finalHtml += employee;
         }
         }
-        
-        else if(document.getElementById("filter").value=='email')
+        else if( $("#filter").val()=='email')
         {
         if(emp.email.includes(x))
         {
 		finalHtml += employee;
         }
         }
-
-        else if(document.getElementById("filter").value=='jobTitle')
+        else if( $("#filter").val()=='jobTitle')
         {
         if(emp.jobTitle.includes(x))
         {
 		finalHtml += employee;
         }
         }
-
-        else if(document.getElementById("filter").value=='office')
+        else if( $("#filter").val()=='office')
         {
         if(emp.office.includes(x))
         {
 		finalHtml += employee;
         }
         }
-
-        else if(document.getElementById("filter").value=='department')
+        else if( $("#filter").val()=='department')
         {
         if(emp.department.includes(x))
         {
 		finalHtml += employee;
         }
         }
-
-        else if(document.getElementById("filter").value=='phoneNumber')
+        else if( $("#filter").val()=='phoneNumber')
         {
         if(emp.phoneNumber.includes(x))
         {
 		finalHtml += employee;
         }
         }
-
-        else if(document.getElementById("filter").value=='skypeId')
+        else if( $("#filter").val()=='skypeId')
         {
         if(emp.skypeId.includes(x))
         {
@@ -299,19 +290,20 @@ function getEmployeeByDetail(x){
         }
         }
     }
-    document.getElementById("employeeListSpace").innerHTML=finalHtml;
+    $("#employeeListSpace").html(finalHtml);
+
 }
 
 function viewMore(){
-    document.getElementById("viewMore").style.display="block";
-    document.getElementById("aViewMore").style.display="none";
-    document.getElementById("viewLess").style.display="block";  
+    $("#viewMore").show();
+    $("#aViewMore").hide();
+    $("#viewLess").show();
 }
 
 function viewLess(){
-    document.getElementById("viewMore").style.display="none";
-    document.getElementById("aViewMore").style.display="block";
-    document.getElementById("viewLess").style.display="none";  
+    $("#viewMore").hide();
+    $("#aViewMore").show();
+    $("#viewLess").hide();
 }
 
 function getEmployeeByFilter(y){
@@ -341,10 +333,10 @@ function getEmployeeByFilter(y){
 		finalHtml += employee;
         }
     }
-    document.getElementById("employeeListSpace").innerHTML=finalHtml;
+    $("#employeeListSpace").html(finalHtml);
 }
 
-function abc(){
+function getEmployeeByButton(){
     const alpha = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
     var finalHtml='';
     for(let a in alpha){
@@ -358,27 +350,8 @@ function abc(){
       </button>`;
       finalHtml += x;
     }
-    document.getElementById("buttonListSpace").innerHTML=finalHtml;
-   
+    $("#buttonListSpace").html(finalHtml);
 }
-
-// (function () {
-//     'use strict'
-//     // Fetch all the forms we want to apply custom Bootstrap validation styles to
-//     var forms = document.querySelectorAll('.needs-validation')
-//     // Loop over them and prevent submission
-//     Array.prototype.slice.call(forms)
-//       .forEach(function (form) {
-//         form.addEventListener('submit', function (event) {
-//           if (!form.checkValidity()) {
-//             event.preventDefault()
-//             event.stopPropagation()
-//           }
-//           form.classList.add('was-validated')
-//         }, false)
-//       })
-//   })()
-
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
     'use strict';
@@ -400,18 +373,6 @@ function abc(){
                 }
               });
             });
-
-            var validOptions = document.querySelectorAll(".form-control:valid");
-            invalidOptions.forEach(function (element) {
-              element.parentNode.childNodes.forEach(function (node) {
-                if (node.className == 'invalid-feedback') {
-                  node.classList.remove('d-none');
-
-                }
-
-              });
-            });
-
           }
           form.classList.add('was-validated');
         }, false);
